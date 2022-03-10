@@ -5,6 +5,11 @@
       <map>
         <entry key="..\:/code/GitHub/self/lottery/lottery/src/main/res/drawable/ic_launcher_background.xml" value="0.33055555555555555" />
         <entry key="..\:/code/GitHub/self/lottery/lottery/src/main/res/layout/activity_main.xml" value="0.18385416666666668" />
+        <entry key="..\:/code/GitHub/self/lottery/lottery/src/main/res/layout/view_page_community.xml" value="0.34322916666666664" />
+        <entry key="..\:/code/GitHub/self/lottery/lottery/src/main/res/layout/view_page_expert.xml" value="0.34322916666666664" />
+        <entry key="..\:/code/GitHub/self/lottery/lottery/src/main/res/layout/view_page_home.xml" value="0.34322916666666664" />
+        <entry key="..\:/code/GitHub/self/lottery/lottery/src/main/res/layout/view_page_lottery.xml" value="0.34322916666666664" />
+        <entry key="..\:/code/GitHub/self/lottery/lottery/src/main/res/layout/view_page_self.xml" value="0.34322916666666664" />
       </map>
     </option>
   </component>
