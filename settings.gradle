@@ -1,2 +1,3 @@
 rootProject.name = "lottery"
 include ':lottery'
+include ':base'
