@@ -1,6 +1,14 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
 }
 
 android {
@@ -24,13 +32,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-//    kotlinOptions {
-//        jvmTarget = '1.8'
-//    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
 }
 
 dependencies {
@@ -47,5 +58,9 @@ dependencies {
 
     //https://github.com/dlew/joda-time-android
     implementation 'net.danlew:android.joda:2.10.12.2'
+
+    //https://github.com/alibaba/ARouter
+    implementation 'com.alibaba:arouter-api:1.5.2'
+    kapt 'com.alibaba:arouter-compiler:1.5.2'
 
 }
