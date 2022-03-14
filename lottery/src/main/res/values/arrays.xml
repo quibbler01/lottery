@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="lottery_grid_items">
+        <item>@string/lottery_grid_item_history</item>
+        <item>@string/lottery_grid_item_trend</item>
+        <item>@string/lottery_grid_item_recommend</item>
+        <item>@string/lottery_grid_item_simulate</item>
+        <item>@string/lottery_grid_item_calculate</item>
+        <item>@string/lottery_grid_item_vip_member</item>
+        <item>@string/lottery_grid_item_date</item>
+        <item>@string/lottery_grid_item_analyze</item>
+        <item>@string/lottery_grid_item_live_hotspot</item>
+        <item>@string/lottery_grid_item_average_analysis</item>
+        <item>@string/lottery_grid_item_selection_distribution</item>
+        <item>@string/lottery_grid_item_missing_treasure</item>
+    </string-array>
+
+    <string-array name="scroll_text_list">
+        <item>命中六组！实时热点拿下</item>
+        <item>彩票专家推荐2022026期命中率96%</item>
+        <item>你我一起红专家喜中六组</item>
+        <item>男子中5900万彩票大奖</item>
+        <item>大乐透开出2注千万一等奖</item>
+        <item>大乐透开出1注一等奖，云南一票独中2275万</item>
+        <item>大乐透开出4注1000万一等奖</item>
+    </string-array>
+
+</resources>

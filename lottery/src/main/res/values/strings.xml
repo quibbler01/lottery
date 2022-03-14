@@ -1,3 +1,64 @@
 <resources>
-    <string name="app_name">lottery</string>
+    <string name="app_name">Lottery</string>
+    <string name="lottery">大乐透</string>
+    <string name="super_lottery">超级大乐透</string>
+
+    <string name="tab_label_home">首页</string>
+    <string name="tab_label_lottery">开奖</string>
+    <string name="tab_label_expert">专家</string>
+    <string name="tab_label_community">社区</string>
+    <string name="tab_label_my">我的</string>
+
+    <string name="default_wealth_num">--</string>
+
+    <string name="my_wealth_colored_diamonds">彩钻</string>
+    <string name="my_wealth_colorful_bean">彩豆</string>
+    <string name="my_wealth_incentive_money">奖励金</string>
+    <string name="my_wealth_coupon">优惠券</string>
+
+    <string name="my_card_activity_center">活动中心</string>
+    <string name="my_card_wechat">公众号</string>
+    <string name="my_card_task">福利任务</string>
+    <string name="my_card_news">我的咨询</string>
+    <string name="my_card_buy">已购记录</string>
+    <string name="my_card_smiulate_record">模拟记录</string>
+    <string name="my_card_help">帮助反馈</string>
+    <string name="my_card_game_center">游戏中心</string>
+    <string name="my_card_bounce">刮奖金</string>
+
+    <string name="function_card_label_recommend">大师推荐</string>
+    <string name="function_card_label_bounce">挂奖金</string>
+    <string name="function_card_label_game_center">游戏中心</string>
+    <string name="function_card_label_trend">走势图</string>
+    <string name="function_card_label_scan">拍票查奖</string>
+    <string name="function_card_label_choose">选号分布</string>
+    <string name="function_card_label_analyze">均线分析</string>
+    <string name="function_card_label_pick">遗漏宝</string>
+    <string name="function_card_label_rainbow">彩虹号</string>
+    <string name="function_card_label_simulate">模拟选号</string>
+
+    <string name="lottery_grid_item_history">历史开奖</string>
+    <string name="lottery_grid_item_trend">走势图</string>
+    <string name="lottery_grid_item_recommend">专家推荐</string>
+    <string name="lottery_grid_item_simulate">模拟选号</string>
+    <string name="lottery_grid_item_calculate">奖金计算器</string>
+    <string name="lottery_grid_item_vip_member">VIP会员</string>
+    <string name="lottery_grid_item_date">数据统计</string>
+    <string name="lottery_grid_item_analyze">趋势分析</string>
+    <string name="lottery_grid_item_live_hotspot">实时热点</string>
+    <string name="lottery_grid_item_average_analysis">均线分析</string>
+    <string name="lottery_grid_item_selection_distribution">选号分布</string>
+    <string name="lottery_grid_item_missing_treasure">遗漏宝</string>
+
+    <string name="my_user_name_default_no_login">登录/注册</string>
+
+    <string name="play_back">回放</string>
+    <string name="more">更多</string>
+    <string name="featured">每日精选</string>
+    <string name="topic">专题</string>
+    <string name="hot_news">热门咨询</string>
+    <string name="countdown">倒计时</string>
+    <string name="dot">·</string>
+    <string name="colon">:</string>
+
 </resources>

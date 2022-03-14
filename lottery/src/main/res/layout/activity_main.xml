@@ -11,7 +11,8 @@
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:background="@color/app_gray_background" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
@@ -26,6 +27,7 @@
         app:tabMode="fixed"
         app:tabRippleColor="@color/transparent"
         app:tabSelectedTextColor="@color/tab_selected_text_color"
+        app:tabTextAppearance="@style/tab_label_text_style"
         app:tabTextColor="@color/tab_unselected_text_color"
         app:tabUnboundedRipple="false" />
 
