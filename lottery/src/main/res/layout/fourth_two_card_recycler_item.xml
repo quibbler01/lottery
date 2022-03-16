@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:layout_marginTop="@dimen/recycler_item_margin"
+    android:layout_marginBottom="@dimen/recycler_item_margin"
+    android:background="@drawable/recycler_item_background"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/image_left"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingStart="0dp"
+        android:paddingEnd="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/card_image_left"
+        app:riv_corner_radius="10dp" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/image_right"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingStart="5dp"
+        android:paddingEnd="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/card_image_right"
+        app:riv_corner_radius="10dp" />
+
+</LinearLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/recycler_item_margin"
+    android:layout_marginBottom="@dimen/recycler_item_margin"
+    android:background="@drawable/my_card_white_background"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/super_lottery"
+            android:textColor="#F2F84848"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="@string/dot"
+            android:textColor="#999999"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:textColor="#999999"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp"
+        android:ellipsize="end"
+        android:lines="2"
+        android:maxLines="2"
+        android:minLines="2"
+        android:text="磨成风大乐透：平台第一专家！204期预测中二等奖69万元，近期预测中5639万元"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/expert_counter_layout_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/count_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/countdown"
+            android:textColor="#9a5453"
+            android:textStyle="bold" />
+
+        <com.robinhood.ticker.TickerView
+            android:id="@+id/count_down_hour"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/countdown_text_bakcground"
+            android:gravity="center"
+            android:text="02"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center"
+            android:text="@string/colon"
+            android:textColor="#f74948" />
+
+        <com.robinhood.ticker.TickerView
+            android:id="@+id/count_down_minutes"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/countdown_text_bakcground"
+            android:gravity="center"
+            android:text="28"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="center"
+            android:text="@string/colon"
+            android:textColor="#f74948" />
+
+        <com.robinhood.ticker.TickerView
+            android:id="@+id/count_down_seconds"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/countdown_text_bakcground"
+            android:gravity="center"
+            android:text="42"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/cost_diamond"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:gravity="end|center_vertical"
+            android:textColor="#f74946"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/diamond" />
+
+        <ImageView
+            android:id="@+id/more_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/red_arrow" />
+
+    </LinearLayout>
+
+</LinearLayout>

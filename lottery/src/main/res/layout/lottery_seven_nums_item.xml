@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="38dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="3dp"
+    android:background="@drawable/my_card_white_background">
+
+    <!--num of lottery-->
+    <TextView
+        android:id="@+id/red_num_one"
+        style="@style/red_ball_text"
+        android:layout_width="@dimen/ball_num_size_small"
+        android:layout_height="@dimen/ball_num_size_small"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/red_num_two"
+        style="@style/red_ball_text"
+        android:layout_width="@dimen/ball_num_size_small"
+        android:layout_height="@dimen/ball_num_size_small"
+        android:layout_alignTop="@id/red_num_one"
+        android:layout_marginStart="@dimen/ball_num_margin_common"
+        android:layout_toEndOf="@+id/red_num_one" />
+
+    <TextView
+        android:id="@+id/red_num_three"
+        style="@style/red_ball_text"
+        android:layout_width="@dimen/ball_num_size_small"
+        android:layout_height="@dimen/ball_num_size_small"
+        android:layout_alignTop="@id/red_num_one"
+        android:layout_marginStart="@dimen/ball_num_margin_common"
+        android:layout_toEndOf="@+id/red_num_two" />
+
+    <TextView
+        android:id="@+id/red_num_four"
+        style="@style/red_ball_text"
+        android:layout_width="@dimen/ball_num_size_small"
+        android:layout_height="@dimen/ball_num_size_small"
+        android:layout_alignTop="@id/red_num_one"
+        android:layout_marginStart="@dimen/ball_num_margin_common"
+        android:layout_toEndOf="@+id/red_num_three" />
+
+    <TextView
+        android:id="@+id/red_num_five"
+        style="@style/red_ball_text"
+        android:layout_width="@dimen/ball_num_size_small"
+        android:layout_height="@dimen/ball_num_size_small"
+        android:layout_alignTop="@id/red_num_one"
+        android:layout_marginStart="@dimen/ball_num_margin_common"
+        android:layout_toEndOf="@+id/red_num_four" />
+
+    <TextView
+        android:id="@+id/blue_num_one"
+        style="@style/blue_ball_text"
+        android:layout_width="@dimen/ball_num_size_small"
+        android:layout_height="@dimen/ball_num_size_small"
+        android:layout_alignTop="@id/red_num_one"
+        android:layout_marginStart="@dimen/ball_num_margin_red_and_blue"
+        android:layout_toEndOf="@+id/red_num_five" />
+
+    <TextView
+        android:id="@+id/blue_num_two"
+        style="@style/blue_ball_text"
+        android:layout_width="@dimen/ball_num_size_small"
+        android:layout_height="@dimen/ball_num_size_small"
+        android:layout_alignTop="@id/red_num_one"
+        android:layout_marginStart="@dimen/ball_num_margin_common"
+        android:layout_toEndOf="@+id/blue_num_one" />
+
+    <ImageView
+        android:id="@+id/more_arrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignTop="@id/red_num_one"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="7dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/more_arrow" />
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/recycler_item_margin"
+    android:layout_marginBottom="@dimen/recycler_item_margin"
+    android:background="@drawable/recycler_item_background"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/featured" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:text="@string/featured"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/more_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/more" />
+
+        <ImageView
+            android:id="@+id/more_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/more_arrow" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>
