@@ -66,7 +66,24 @@ dependencies {
     //https://github.com/robinhood/ticker
     implementation 'com.robinhood.ticker:ticker:2.0.4'
 
+    //https://github.com/bumptech/glide
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    kapt 'com.github.bumptech.glide:compiler:4.13.0'
+
     //https://github.com/google/gson
     implementation 'com.google.code.gson:gson:2.9.0'
+
+    //https://github.com/square/retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    //https://square.github.io/retrofit/
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //https://github.com/sharish/ShimmerRecyclerView
+    implementation 'com.github.sharish:ShimmerRecyclerView:v1.3'
+    //https://github.com/team-supercharge/ShimmerLayout
+    implementation 'io.supercharge:shimmerlayout:2.1.0'
+
+    //https://github.com/facebook/shimmer-android
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
 }
