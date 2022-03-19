@@ -5,11 +5,17 @@ import androidx.recyclerview.widget.RecyclerView
 import cn.quibbler.lottery.LotteryApplication.Companion.getInflater
 import cn.quibbler.lottery.databinding.ExpertRecyclerViewItemBinding
 import cn.quibbler.lottery.model.Repository
+import cn.quibbler.lottery.model.bean.OpenLotteryItem
+import cn.quibbler.lottery.repository.LoadCallback
 import com.robinhood.ticker.TickerUtils
 
 class ExpertRecyclerViewItem : RecyclerView.Adapter<ExpertRecyclerViewItem.ViewHolder>() {
 
-    private val list = Repository.getHistoryOpenLottery()
+    private val list = ArrayList<OpenLotteryItem>()
+
+    init {
+        requestMoreData()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ExpertRecyclerViewItemBinding.inflate(getInflater(), parent, false)
@@ -30,6 +36,14 @@ class ExpertRecyclerViewItem : RecyclerView.Adapter<ExpertRecyclerViewItem.ViewH
     }
 
     override fun getItemCount(): Int = list.size
+
+    fun requestMoreData(callback: LoadCallback? = null) {
+        val start = list.size
+        val data = Repository.requestData(start)
+        list.addAll(data)
+        notifyItemRangeInserted(start, data.size)
+        callback?.onSuccess()
+    }
 
     class ViewHolder(val binding: ExpertRecyclerViewItemBinding) : RecyclerView.ViewHolder(binding.root)
 
