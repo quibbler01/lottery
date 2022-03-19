@@ -18,4 +18,9 @@
     <dimen name="ball_num_margin_red_and_blue">12dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+    <dimen name="settings_item_size">64dp</dimen>
+    <dimen name="settings_icon_size">26dp</dimen>
+    <dimen name="settings_arrow_size">22dp</dimen>
+    <dimen name="settings_text_size">16dp</dimen>
+
 </resources>

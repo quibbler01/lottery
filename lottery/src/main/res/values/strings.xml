@@ -26,8 +26,8 @@
     <string name="my_card_game_center">游戏中心</string>
     <string name="my_card_bounce">刮奖金</string>
 
+    <string name="function_card_label_bounce">刮奖金</string>
     <string name="function_card_label_recommend">大师推荐</string>
-    <string name="function_card_label_bounce">挂奖金</string>
     <string name="function_card_label_game_center">游戏中心</string>
     <string name="function_card_label_trend">走势图</string>
     <string name="function_card_label_scan">拍票查奖</string>
@@ -49,16 +49,38 @@
     <string name="lottery_grid_item_average_analysis">均线分析</string>
     <string name="lottery_grid_item_selection_distribution">选号分布</string>
     <string name="lottery_grid_item_missing_treasure">遗漏宝</string>
-
     <string name="my_user_name_default_no_login">登录/注册</string>
-
+    <string name="my_information_great">我的赞</string>
+    <string name="my_information_collection">我的收藏</string>
+    <string name="my_information_comment">我的评论</string>
+    <string name="my_information_no_data_hint">抱歉，暂无数据</string>
+    <string name="my_bought_tab_label1">大师精选</string>
+    <string name="my_bought_tab_label2">智能推荐</string>
+    <string name="my_bought_tab_label3">资讯</string>
     <string name="play_back">回放</string>
     <string name="more">更多</string>
+    <string name="remind">提醒</string>
+    <string name="notify">通知</string>
+    <string name="message">消息</string>
+    <string name="settings">设置</string>
     <string name="featured">每日精选</string>
     <string name="topic">专题</string>
-    <string name="hot_news">热门咨询</string>
+    <string name="sign_in_now">立即签到</string>
+    <string name="hot_news">热门资讯</string>
     <string name="countdown">倒计时</string>
     <string name="dot">·</string>
     <string name="colon">:</string>
+    <string name="activity_center_title_1">彩虹号招募</string>
+    <string name="activity_center_title_2">度小满-百度有钱花</string>
+    <string name="welfare_task_sing">签到领彩豆</string>
+    <string name="welfare_task_sing_days">已连续签到0天</string>
+    <string name="log_out">退出登录</string>
+    <string name="settings_safe">账户与安全</string>
+    <string name="settings_pay">支付设置</string>
+    <string name="settings_check_upgrade">检查更新</string>
+    <string name="settings_about">关于我们</string>
+    <string name="settings_user_agreement">用户协议</string>
+    <string name="settings_privacy">隐私规范</string>
+    <string name="settings_socity">社区规范</string>
 
 </resources>

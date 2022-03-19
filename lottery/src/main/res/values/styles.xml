@@ -32,4 +32,9 @@
         <item name="android:textSize">16dp</item>
     </style>
 
+    <style name="my_information_tab_text_style">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+
 </resources>
