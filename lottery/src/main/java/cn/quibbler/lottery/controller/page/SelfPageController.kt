@@ -14,7 +14,7 @@ import cn.quibbler.lottery.utils.getAppDrawable
 import cn.quibbler.lottery.utils.getAppString
 import com.alibaba.android.arouter.launcher.ARouter
 
-class SelfPageController : Controller {
+class SelfPageController : Controller, View.OnClickListener {
 
     private val binding = ViewPageSelfBinding.inflate(LotteryApplication.getInflater())
 
@@ -34,6 +34,9 @@ class SelfPageController : Controller {
                         .navigation()
             }
         }
+
+        binding.myMessage.setOnClickListener(this)
+        binding.mySettings.setOnClickListener(this)
     }
 
     override fun getView(): View = binding.root
@@ -44,6 +47,21 @@ class SelfPageController : Controller {
         getAppDrawable(R.drawable.tab_my_selected)
     } else {
         getAppDrawable(R.drawable.tab_my_unselected)
+    }
+
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.my_message -> {
+                ARouter.getInstance().build(RouterCenter.message_activity)
+                        .withString(RouterCenter.argument_title, getAppString(R.string.message))
+                        .navigation()
+            }
+            R.id.my_settings -> {
+                ARouter.getInstance().build(RouterCenter.settings_activity)
+                        .withString(RouterCenter.argument_title, getAppString(R.string.settings))
+                        .navigation()
+            }
+        }
     }
 
 }

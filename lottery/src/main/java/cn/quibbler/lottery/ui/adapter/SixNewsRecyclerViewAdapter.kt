@@ -10,9 +10,11 @@ import cn.quibbler.lottery.LotteryApplication.Companion.getContext
 import cn.quibbler.lottery.LotteryApplication.Companion.getInflater
 import cn.quibbler.lottery.databinding.NewsItemLayoutBinding
 import cn.quibbler.lottery.databinding.NewsRecyclerViewBinding
+import cn.quibbler.lottery.model.NewsRepository
 import cn.quibbler.lottery.model.RouterCenter
 import cn.quibbler.lottery.model.bean.NewsChannels
 import cn.quibbler.lottery.model.bean.NewsLists
+import cn.quibbler.lottery.repository.LoadCallback
 import cn.quibbler.lottery.repository.network.retrofit.NewsService
 import cn.quibbler.lottery.repository.network.retrofit.RetrofitHelper
 import com.alibaba.android.arouter.launcher.ARouter
@@ -23,6 +25,8 @@ import retrofit2.Response
 
 class SixNewsRecyclerViewAdapter : RecyclerView.Adapter<SixNewsRecyclerViewAdapter.ViewHolder>() {
 
+    private val adapter = NewsRecyclerViewAdapter()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = NewsRecyclerViewBinding.inflate(getInflater(), parent, false)
         return ViewHolder(binding)
@@ -32,7 +36,11 @@ class SixNewsRecyclerViewAdapter : RecyclerView.Adapter<SixNewsRecyclerViewAdapt
         val layoutManager = LinearLayoutManager(getContext())
         layoutManager.isAutoMeasureEnabled = true
         holder.binding.recyclerView.layoutManager = layoutManager
-        holder.binding.recyclerView.adapter = NewsRecyclerViewAdapter()
+        holder.binding.recyclerView.adapter = adapter
+    }
+
+    fun requestNews(callback: LoadCallback) {
+        adapter.requestNews(callback)
     }
 
     override fun getItemCount(): Int = 1
@@ -45,8 +53,7 @@ class SixNewsRecyclerViewAdapter : RecyclerView.Adapter<SixNewsRecyclerViewAdapt
         private val list = ArrayList<NewsLists.Item>()
 
         init {
-            val service = RetrofitHelper.retrofit.create(NewsService::class.java)
-            val call: Call<NewsLists> = service.getNewsLists()
+            val call: Call<NewsLists> = NewsRepository.service.getNewsLists()
             call.enqueue(object : Callback<NewsLists> {
                 override fun onResponse(call: Call<NewsLists>, response: Response<NewsLists>) {
                     response.body()?.result?.result?.list?.let {
@@ -87,6 +94,24 @@ class SixNewsRecyclerViewAdapter : RecyclerView.Adapter<SixNewsRecyclerViewAdapt
         }
 
         override fun getItemCount(): Int = list.size
+
+        fun requestNews(callback: LoadCallback? = null) {
+            val start = list.size
+            val call: Call<NewsLists> = NewsRepository.service.getNewsLists(start = start)
+            call.enqueue(object : Callback<NewsLists> {
+                override fun onResponse(call: Call<NewsLists>, response: Response<NewsLists>) {
+                    response.body()?.result?.result?.list?.let {
+                        list.addAll(it)
+                        notifyItemRangeInserted(start, it.size)
+                        callback?.onSuccess()
+                    }
+                }
+
+                override fun onFailure(call: Call<NewsLists>, t: Throwable) {
+                    callback?.onFailed()
+                }
+            })
+        }
 
         class ViewHolder(val binding: NewsItemLayoutBinding) : RecyclerView.ViewHolder(binding.root)
 

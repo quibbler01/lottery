@@ -6,6 +6,7 @@ import cn.quibbler.lottery.LotteryApplication.Companion.getInflater
 import cn.quibbler.lottery.databinding.LotteryPageRecyclerViewItemBinding
 import cn.quibbler.lottery.model.Repository
 import cn.quibbler.lottery.model.bean.OpenLotteryItem
+import cn.quibbler.lottery.repository.LoadCallback
 import cn.quibbler.lottery.ui.adapter.pageadapter.LotteryRecyclerItemGridViewAdapter
 import java.util.*
 import kotlin.collections.ArrayList
@@ -17,7 +18,7 @@ class LotteryPageRecyclerViewAdapter : RecyclerView.Adapter<LotteryPageRecyclerV
     private val list = ArrayList<OpenLotteryItem>()
 
     init {
-        list.addAll(Repository.getHistoryOpenLottery())
+        list.addAll(Repository.requestData())
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -42,6 +43,14 @@ class LotteryPageRecyclerViewAdapter : RecyclerView.Adapter<LotteryPageRecyclerV
     }
 
     override fun getItemCount(): Int = list.size
+
+    public fun requestNextPageData(callback: LoadCallback) {
+        val start = list.size
+        val data = Repository.requestData(start)
+        list.addAll(data)
+        notifyItemRangeInserted(start, data.size)
+        callback.onSuccess()
+    }
 
     class ViewHolder(val binding: LotteryPageRecyclerViewItemBinding) : RecyclerView.ViewHolder(binding.root)
 

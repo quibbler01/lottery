@@ -9,7 +9,7 @@ import cn.quibbler.lottery.model.bean.OpenLotteryItem
 import cn.quibbler.lottery.repository.LoadCallback
 import com.robinhood.ticker.TickerUtils
 
-class ExpertRecyclerViewItem : RecyclerView.Adapter<ExpertRecyclerViewItem.ViewHolder>() {
+class ExpertRecyclerViewAdapter : RecyclerView.Adapter<ExpertRecyclerViewAdapter.ViewHolder>() {
 
     private val list = ArrayList<OpenLotteryItem>()
 
