@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_gray_background"
+    android:orientation="vertical"
+    tools:context=".ui.activity.SettingPayActivity">
+
+    <LinearLayout
+        android:id="@+id/password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_change"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <TextView
+            android:id="@+id/label_password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|start"
+            android:text="@string/pay_password"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/back_card_layout"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_change"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <TextView
+            android:id="@+id/back_card"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|start"
+            android:text="@string/bank_card"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/more_arrow" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/real_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_change"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <TextView
+            android:id="@+id/real_name_label"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|start"
+            android:text="@string/real_name_information"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:minWidth="30dp"
+            android:text="@string/to_fill_in"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="2dp"
+            android:src="@drawable/more_arrow" />
+
+    </LinearLayout>
+
+</LinearLayout>

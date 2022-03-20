@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_gray_background"
+    android:orientation="vertical"
+    tools:context=".ui.activity.AboutUsActivity">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/app_icon" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="#CC000000"
+        android:textSize="24dp" />
+
+    <LinearLayout
+        android:id="@+id/version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="55dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:background="#26000000" />
+
+        <TextView
+            android:id="@+id/text_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/version" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:background="#26000000" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/user_agreement_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/settings_item_size"
+        android:layout_below="@id/version"
+        android:background="@drawable/bg_change"
+        android:clickable="true"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+        <ImageView
+            android:id="@+id/setting_account_icon"
+            android:layout_width="@dimen/settings_icon_size"
+            android:layout_height="@dimen/settings_icon_size"
+            android:layout_centerVertical="true"
+            android:src="@drawable/settings_user_agreement" />
+
+        <TextView
+            android:id="@+id/setting_account_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@id/setting_account_arrow"
+            android:layout_toEndOf="@id/setting_account_icon"
+            android:gravity="start|center_vertical"
+            android:text="@string/settings_user_agreement"
+            android:textColor="@color/black"
+            android:textSize="@dimen/settings_text_size" />
+
+        <ImageView
+            android:id="@+id/setting_account_arrow"
+            android:layout_width="@dimen/settings_arrow_size"
+            android:layout_height="@dimen/settings_arrow_size"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/more_arrow" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/app_gray_background" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/settings_privacy_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/settings_item_size"
+        android:layout_below="@id/user_agreement_layout"
+        android:background="@drawable/bg_change"
+        android:clickable="true"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+        <ImageView
+            android:id="@+id/setting_pay_icon"
+            android:layout_width="@dimen/settings_icon_size"
+            android:layout_height="@dimen/settings_icon_size"
+            android:layout_centerVertical="true"
+            android:src="@drawable/settings_privacy" />
+
+        <TextView
+            android:id="@+id/setting_pay_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@id/setting_pay_arrow"
+            android:layout_toEndOf="@id/setting_pay_icon"
+            android:gravity="start|center_vertical"
+            android:text="@string/settings_privacy"
+            android:textColor="@color/black"
+            android:textSize="@dimen/settings_text_size" />
+
+        <ImageView
+            android:id="@+id/setting_pay_arrow"
+            android:layout_width="@dimen/settings_arrow_size"
+            android:layout_height="@dimen/settings_arrow_size"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/more_arrow" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/app_gray_background" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/settings_socity_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/settings_item_size"
+        android:layout_below="@id/settings_privacy_layout"
+        android:background="@drawable/bg_change"
+        android:clickable="true"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+        <ImageView
+            android:id="@+id/setting_upgrade_icon"
+            android:layout_width="@dimen/settings_icon_size"
+            android:layout_height="@dimen/settings_icon_size"
+            android:layout_centerVertical="true"
+            android:src="@drawable/settings_socity" />
+
+        <TextView
+            android:id="@+id/setting_upgrade_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@id/setting_upgrade_arrow"
+            android:layout_toEndOf="@id/setting_upgrade_icon"
+            android:gravity="start|center_vertical"
+            android:text="@string/settings_socity"
+            android:textColor="@color/black"
+            android:textSize="@dimen/settings_text_size" />
+
+        <ImageView
+            android:id="@+id/setting_upgrade_arrow"
+            android:layout_width="@dimen/settings_arrow_size"
+            android:layout_height="@dimen/settings_arrow_size"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/more_arrow" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/app_gray_background" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_gray_background"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    tools:context=".ui.activity.RealNameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:lines="1"
+            android:maxWidth="220dp"
+            android:minWidth="110dp"
+            android:text="@string/account_open_name"
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <EditText
+            android:id="@+id/edittext_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/hint_input_real_name"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#03000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:lines="1"
+            android:maxWidth="220dp"
+            android:minWidth="110dp"
+            android:text="@string/id_number"
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <EditText
+            android:id="@+id/edittext_number"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:background="@null"
+            android:hint="@string/hint_input_id_number"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/confirm_button_bg"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/confirm"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/text_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="20dp"
+        android:minLines="3"
+        android:text="【温馨提示】\n\n1.实名信息为彩虹多多平台核实身份的唯一凭证，请填写真实信息；\n2.我们不会将您的信息泄露或用作其他用途，请放心填写；\n3.如有任何问题，请联系在线客服。"
+        android:textSize="14dp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

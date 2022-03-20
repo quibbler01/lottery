@@ -1,0 +1,52 @@
+package cn.quibbler.lottery.ui.activity
+
+import android.os.Bundle
+import android.view.View
+import cn.quibbler.lottery.R
+import cn.quibbler.lottery.databinding.ActivityAboutUsBinding
+import cn.quibbler.lottery.model.RouterCenter
+import cn.quibbler.lottery.utils.getAppString
+import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
+
+@Route(path = RouterCenter.settings_activity_about)
+class AboutUsActivity : BaseActivity(), View.OnClickListener {
+
+    private lateinit var binding: ActivityAboutUsBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        binding = ActivityAboutUsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        initView()
+    }
+
+    private fun initView() {
+        binding.userAgreementLayout.setOnClickListener(this)
+        binding.settingsPrivacyLayout.setOnClickListener(this)
+        binding.settingsSocityLayout.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            binding.userAgreementLayout.id -> {
+                ARouter.getInstance().build(RouterCenter.settings_activity_about_user_agreement)
+                        .withString(RouterCenter.argument_title, getAppString(R.string.settings_user_agreement))
+                        .navigation()
+            }
+            binding.settingsPrivacyLayout.id -> {
+                ARouter.getInstance().build(RouterCenter.settings_activity_about_privacy)
+                        .withString(RouterCenter.argument_title, getAppString(R.string.settings_privacy))
+                        .navigation()
+            }
+            binding.settingsSocityLayout.id -> {
+                ARouter.getInstance().build(RouterCenter.settings_activity_about_socity)
+                        .withString(RouterCenter.argument_title, getAppString(R.string.settings_socity))
+                        .navigation()
+            }
+        }
+    }
+
+}
