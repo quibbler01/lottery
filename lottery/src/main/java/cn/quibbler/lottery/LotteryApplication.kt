@@ -2,10 +2,14 @@ package cn.quibbler.lottery
 
 import android.app.Application
 import android.content.Context
+import android.graphics.Color
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
 import com.alibaba.android.arouter.launcher.ARouter
+import com.scwang.smart.refresh.footer.BallPulseFooter
+import com.scwang.smart.refresh.header.BezierRadarHeader
+import com.scwang.smart.refresh.layout.SmartRefreshLayout
 
 class LotteryApplication : Application() {
 
@@ -17,6 +21,15 @@ class LotteryApplication : Application() {
         fun getContext(): Context = application
         fun getInflater(): LayoutInflater = layoutInflater
         fun getMainHandler(): Handler = handler
+    }
+
+    init {
+        SmartRefreshLayout.setDefaultRefreshHeaderCreator { context, layout ->
+            BezierRadarHeader(context).setPrimaryColor(Color.parseColor("#e8354b"))
+        }
+        SmartRefreshLayout.setDefaultRefreshFooterCreator { context, layout ->
+            BallPulseFooter(context).setAnimatingColor(Color.parseColor("#e8354b"))
+        }
     }
 
     override fun attachBaseContext(base: Context?) {
