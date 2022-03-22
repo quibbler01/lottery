@@ -14,8 +14,12 @@
     <color name="tab_unselected_text_color">#BD000000</color>
 
     <color name="app_gray_background">#f0eff4</color>
+    <color name="app_gray_bg">#40737376</color>
 
     <color name="red_num">#f84848</color>
     <color name="blue_num">#3775fe</color>
+
+    <color name="confirm">#CCF21F1F</color>
+    <color name="un_confirm">#A6F84848</color>
 
 </resources>
