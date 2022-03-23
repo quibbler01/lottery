@@ -32,12 +32,12 @@
     <View
         android:id="@+id/split"
         android:layout_width="1dp"
-        android:layout_height="12dp"
+        android:layout_height="14dp"
         android:layout_alignBottom="@id/title"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="0dp"
         android:layout_toEndOf="@id/num_of_lottery"
-        android:background="#33000000" />
+        android:background="#0D000000" />
 
     <TextView
         android:id="@+id/date_of_lottery"
@@ -69,7 +69,7 @@
         android:layout_alignParentEnd="true"
         android:background="@drawable/play_back_background"
         android:gravity="center"
-        android:minWidth="50dp"
+        android:minWidth="55dp"
         android:text="@string/play_back"
         android:textColor="@color/black"
         android:textSize="14dp" />

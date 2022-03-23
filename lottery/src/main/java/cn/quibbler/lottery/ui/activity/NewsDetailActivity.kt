@@ -1,6 +1,7 @@
 package cn.quibbler.lottery.ui.activity
 
 import android.os.Bundle
+import android.webkit.WebSettings
 import android.webkit.WebViewClient
 import cn.quibbler.lottery.databinding.ActivityNewsDetailBinding
 import cn.quibbler.lottery.model.RouterCenter
@@ -31,10 +32,15 @@ class NewsDetailActivity : BaseActivity() {
         val setting = binding.webView.settings
         setting.setSupportZoom(false)
         setting.displayZoomControls = false
+        setting.loadWithOverviewMode = true
         setting.loadsImagesAutomatically = true
+        setting.domStorageEnabled = true
         setting.javaScriptEnabled = true
         setting.javaScriptCanOpenWindowsAutomatically = false
         setting.defaultTextEncodingName = "utf-8"
+        //cache
+        setting.setAppCacheEnabled(false)
+        setting.cacheMode = WebSettings.LOAD_CACHE_ELSE_NETWORK
 
         url?.let { binding.webView.loadUrl(it) }
     }

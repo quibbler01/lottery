@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:gravity="center"
     android:layout_height="30dp">
 
     <TextView
         android:id="@+id/label"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_margin="5dp"
+        android:layout_height="24dp"
+        android:layout_margin="3dp"
         android:background="@drawable/lottery_grid_view_item_background"
         android:gravity="center"
         android:textColor="#a33333"

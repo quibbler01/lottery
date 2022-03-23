@@ -34,16 +34,19 @@ class AboutUsActivity : BaseActivity(), View.OnClickListener {
             binding.userAgreementLayout.id -> {
                 ARouter.getInstance().build(RouterCenter.settings_activity_about_user_agreement)
                         .withString(RouterCenter.argument_title, getAppString(R.string.settings_user_agreement))
+                        .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.privacy)
                         .navigation()
             }
             binding.settingsPrivacyLayout.id -> {
                 ARouter.getInstance().build(RouterCenter.settings_activity_about_privacy)
                         .withString(RouterCenter.argument_title, getAppString(R.string.settings_privacy))
+                        .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.user_agreement)
                         .navigation()
             }
             binding.settingsSocityLayout.id -> {
                 ARouter.getInstance().build(RouterCenter.settings_activity_about_socity)
                         .withString(RouterCenter.argument_title, getAppString(R.string.settings_socity))
+                        .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.community_agreement)
                         .navigation()
             }
         }
