@@ -101,4 +101,11 @@ dependencies {
 
     //https://github.com/Clans/FloatingActionButton
     //implementation 'com.github.clans:fab:1.6.4'
+
+    //https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
+
+    //https://github.com/anzaizai/EasySwipeMenuLayout
+    implementation 'com.github.anzaizai:EasySwipeMenuLayout:1.1.4'
+
 }

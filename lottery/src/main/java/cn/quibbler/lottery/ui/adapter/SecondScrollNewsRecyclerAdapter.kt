@@ -27,12 +27,12 @@ class SecondScrollNewsRecyclerAdapter : RecyclerView.Adapter<SecondScrollNewsRec
             textView.setTextAppearance(R.style.text_switcher_style)
             textView
         }
+        val switcherAnnotation = TextSwitcherAnimation(binding.textSwitcher, list)
+        switcherAnnotation.create()
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val switcherAnnotation = TextSwitcherAnimation(holder.binding.textSwitcher, list)
-        switcherAnnotation.create()
     }
 
     override fun getItemCount(): Int = 1

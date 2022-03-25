@@ -8,13 +8,15 @@ import cn.quibbler.lottery.ui.adapter.pageadapter.BannerViewPagerAdapter
 
 class FirstBannerRecyclerAdapter : RecyclerView.Adapter<FirstBannerRecyclerAdapter.ViewHolder>() {
 
+    private val adapter = BannerViewPagerAdapter()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = FirstBannerRecyclerItemBinding.inflate(getInflater(), parent, false)
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.viewPager.adapter = BannerViewPagerAdapter();
+        holder.binding.viewPager.adapter = adapter
     }
 
     override fun getItemCount(): Int = 1
