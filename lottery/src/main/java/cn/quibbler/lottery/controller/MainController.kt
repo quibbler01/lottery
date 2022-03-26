@@ -28,25 +28,36 @@ class MainController() : Controller {
     private fun initView() {
         binding.viewPager.adapter = MainViewPagerAdapter(controllers)
 
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            var lastClickTime: Long = 0L
+            var lastClickPosition: Int = 0
+
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 tab?.let {
-                    it.setIcon(controllers[it.position].getDrawableIcon(true))
+                    it.icon = controllers[it.position].getDrawableIcon(true)
+                    lastClickTime = System.currentTimeMillis()
+                    lastClickPosition = it.position
                 }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
                 tab?.let {
-                    it.setIcon(controllers[it.position].getDrawableIcon(false))
+                    it.icon = controllers[it.position].getDrawableIcon(false)
                 }
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
-
+                tab?.let {
+                    if (it.position == lastClickPosition && (System.currentTimeMillis() - lastClickTime < 500)) {
+                        controllers[it.position].goTop()
+                    }
+                    lastClickTime = System.currentTimeMillis()
+                    lastClickPosition = it.position
+                }
             }
         })
 
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
         for (index in 0 until binding.tabLayout.tabCount) {
             binding.tabLayout.getTabAt(index)?.let {
                 it.icon = controllers[index].getDrawableIcon(it.isSelected)

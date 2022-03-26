@@ -17,9 +17,10 @@ class ExpertPageController : Controller, LoadCallback {
 
     private val binding = ViewPageExpertBinding.inflate(LotteryApplication.getInflater())
     private val adapter = ExpertRecyclerViewAdapter()
+    private val layoutManager = LinearLayoutManager(LotteryApplication.getContext())
 
     init {
-        binding.recyclerView.layoutManager = LinearLayoutManager(LotteryApplication.getContext())
+        binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
 
         binding.smartRefreshLayout.setRefreshHeader(ClassicsHeader(LotteryApplication.getContext()))
@@ -47,6 +48,14 @@ class ExpertPageController : Controller, LoadCallback {
 
     override fun onFailed() {
         binding.smartRefreshLayout.finishLoadMore(false)
+    }
+
+    override fun goTop() {
+        if (layoutManager.findFirstVisibleItemPosition() == 0) {
+            binding.smartRefreshLayout.autoRefresh()
+        } else {
+            binding.recyclerView.smoothScrollToPosition(0)
+        }
     }
 
 }

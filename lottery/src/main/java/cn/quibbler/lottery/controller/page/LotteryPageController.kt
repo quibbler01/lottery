@@ -18,9 +18,10 @@ class LotteryPageController : Controller, LoadCallback {
 
     private val binding = ViewPageLotteryBinding.inflate(LotteryApplication.getInflater())
     private val adapter = LotteryPageRecyclerViewAdapter()
+    private val layoutManager = LinearLayoutManager(getContext())
 
     init {
-        binding.recyclerView.layoutManager = LinearLayoutManager(getContext())
+        binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
 
         binding.smartRefreshLayout.setRefreshHeader(ClassicsHeader(getContext()))
@@ -48,6 +49,14 @@ class LotteryPageController : Controller, LoadCallback {
 
     override fun onFailed() {
         binding.smartRefreshLayout.finishLoadMore(false)
+    }
+
+    override fun goTop() {
+        if (layoutManager.findFirstVisibleItemPosition() == 0) {
+            binding.smartRefreshLayout.autoRefresh()
+        } else {
+            binding.recyclerView.smoothScrollToPosition(0)
+        }
     }
 
 }

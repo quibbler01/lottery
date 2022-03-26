@@ -12,4 +12,6 @@ interface Controller {
 
     fun getDrawableIcon(selected: Boolean = false): Drawable? = null
 
+    fun goTop() {}
+
 }

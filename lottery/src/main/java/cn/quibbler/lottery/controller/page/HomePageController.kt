@@ -17,6 +17,7 @@ import cn.quibbler.lottery.utils.getAppString
 class HomePageController : Controller, LoadCallback {
 
     private val binding = ViewPageHomeBinding.inflate(LotteryApplication.getInflater())
+    private lateinit var layoutManager: LinearLayoutManager
 
     private val firstAdapter = FirstBannerRecyclerAdapter()
     private val secondAdapter = SecondScrollNewsRecyclerAdapter()
@@ -27,7 +28,7 @@ class HomePageController : Controller, LoadCallback {
     private val concatAdapter: ConcatAdapter = ConcatAdapter(firstAdapter, secondAdapter, thirdAdapter, fourthAdapter, fifthAdapter, sixAdapter)
 
     init {
-        val layoutManager = LinearLayoutManager(getContext())
+        layoutManager = LinearLayoutManager(getContext())
         layoutManager.isAutoMeasureEnabled = true
         binding.mainMixedRecyclerView.layoutManager = layoutManager
         binding.mainMixedRecyclerView.adapter = concatAdapter
@@ -56,6 +57,14 @@ class HomePageController : Controller, LoadCallback {
 
     override fun onFailed() {
         binding.smartRefreshLayout.finishLoadMore(false)
+    }
+
+    override fun goTop() {
+        if (layoutManager.findFirstVisibleItemPosition() == 0) {
+            binding.smartRefreshLayout.autoRefresh()
+        } else {
+            binding.mainMixedRecyclerView.smoothScrollToPosition(0)
+        }
     }
 
 }
