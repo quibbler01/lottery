@@ -18,8 +18,31 @@ object RouterCenter {
 
     const val message_activity = "$self_group/message"
     const val settings_activity = "$self_group/settings"
+    const val settings_activity_account = "$settings_activity/account"
+    const val settings_activity_pay = "$settings_activity/pay"
+    const val settings_activity_upgrade = "$settings_activity/upgrade"
+    const val settings_activity_about = "$settings_activity/about"
+    const val settings_activity_about_user_agreement = "$settings_activity/about/privacy_common_view"
+    const val settings_activity_about_privacy = settings_activity_about_user_agreement
+    const val settings_activity_about_socity = settings_activity_about_user_agreement
+    const val settings_activity_pay_password = "$settings_activity_pay/password"
+    const val settings_activity_pay_bankcard = "$settings_activity_pay/bankcard"
+    const val settings_activity_pay_realname = "$settings_activity_pay/realname"
+
+    private const val card_group = "/card"
+    const val function_recommend_activity = "$card_group/recommend"
+    const val function_open_bounce_activity = "$card_group/open_bounce"
+    const val function_game_center_activity = "$card_group/game_center"
+    const val function_trend_activity = "$card_group/trend"
+    const val function_scan_activity = "$card_group/scan"
+    const val function_choose_activity = "$card_group/choose"
+    const val function_analyze_activity = "$card_group/analyze"
+    const val function_pick_activity = "$card_group/pick"
+    const val function_rainbow_activity = "$card_group/rainbow"
+    const val function_simulate_activity = "$card_group/simulate"
 
     /*argument*/
     const val argument_title = "title"
+    const val argument_file_name = "file_name"
 
 }
