@@ -14,7 +14,7 @@ object Repository {
     private val RED_NUM_LIST = ArrayList<String>()
     private val BLUE_NUM_LIST = ArrayList<String>()
 
-    private val MAX = 360
+    private const val MAX = 360
 
     private val TODAY = DateTime()
     private const val curNumOfLottery = 22025
@@ -73,10 +73,10 @@ object Repository {
     public fun getCost(range: Int) = RANDOM.nextInt(range)
 
     public fun requestData(start: Int = 0, itemCount: Int = page_size): List<OpenLotteryItem> {
-        if (start + itemCount > list.size) {
-            return ArrayList<OpenLotteryItem>()
+        return if (start + itemCount > list.size) {
+            ArrayList<OpenLotteryItem>()
         } else {
-            return list.subList(start, start + itemCount)
+            list.subList(start, start + itemCount)
         }
     }
 

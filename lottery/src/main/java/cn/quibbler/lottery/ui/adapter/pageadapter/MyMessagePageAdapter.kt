@@ -20,16 +20,16 @@ class MyMessagePageAdapter : PagerAdapter() {
     override fun isViewFromObject(view: View, `object`: Any): Boolean = view == `object`
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        if (position == 0) {
+        return if (position == 0) {
             val binding = NoDataDefaultLayoutBinding.inflate(getInflater(), container, false)
             container.addView(binding.root)
-            return binding.root
+            binding.root
         } else {
             val binding = NotifyPageLayoutBinding.inflate(getInflater(), container, false)
             binding.smartRefreshLayout.setRefreshHeader(FalsifyHeader(container.context))
             binding.smartRefreshLayout.setRefreshFooter(ClassicsFooter(container.context))
             container.addView(binding.root)
-            return binding.root
+            binding.root
         }
     }
 

@@ -28,7 +28,7 @@ public class TextSwitcherAnimation {
         @Override
         public void run() {
             nextView();
-            handler.postDelayed(task, delayTime * 2);
+            handler.postDelayed(task, delayTime * 2L);
         }
     };
 
