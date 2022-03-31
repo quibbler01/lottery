@@ -108,4 +108,6 @@ dependencies {
     //https://github.com/anzaizai/EasySwipeMenuLayout
     implementation 'com.github.anzaizai:EasySwipeMenuLayout:1.1.4'
 
+    //https://square.github.io/leakcanary/
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.8.1'
 }
