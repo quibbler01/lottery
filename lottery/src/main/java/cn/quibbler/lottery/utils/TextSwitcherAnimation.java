@@ -46,6 +46,11 @@ public class TextSwitcherAnimation {
         handler.removeCallbacks(task);
     }
 
+    public void end() {
+        stop();
+        textSwitcher = null;
+    }
+
     public int getMarker() {
         return marker;
     }

@@ -67,4 +67,10 @@ class MainController() : Controller {
 
     override fun getView(): View = binding.root
 
+    override fun release() {
+        for (c in controllers) {
+            c.release()
+        }
+    }
+
 }

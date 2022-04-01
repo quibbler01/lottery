@@ -67,4 +67,8 @@ class HomePageController : Controller, LoadCallback {
         }
     }
 
+    override fun release() {
+        secondAdapter.release()
+    }
+
 }

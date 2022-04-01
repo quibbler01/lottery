@@ -12,6 +12,7 @@ import cn.quibbler.lottery.utils.TextSwitcherAnimation
 class SecondScrollNewsRecyclerAdapter : RecyclerView.Adapter<SecondScrollNewsRecyclerAdapter.ViewHolder>() {
 
     private val list: ArrayList<String> = ArrayList()
+    private var switcherAnnotation: TextSwitcherAnimation? = null
 
     init {
         val l = getContext().resources.getStringArray(R.array.scroll_text_list)
@@ -27,8 +28,8 @@ class SecondScrollNewsRecyclerAdapter : RecyclerView.Adapter<SecondScrollNewsRec
             textView.setTextAppearance(R.style.text_switcher_style)
             textView
         }
-        val switcherAnnotation = TextSwitcherAnimation(binding.textSwitcher, list)
-        switcherAnnotation.create()
+        switcherAnnotation = TextSwitcherAnimation(binding.textSwitcher, list)
+        switcherAnnotation?.create()
         return ViewHolder(binding)
     }
 
@@ -39,6 +40,10 @@ class SecondScrollNewsRecyclerAdapter : RecyclerView.Adapter<SecondScrollNewsRec
 
     class ViewHolder(val binding: SecondScrollTextRecyclerItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
+    }
+
+    public fun release() {
+        switcherAnnotation?.end()
     }
 
 }

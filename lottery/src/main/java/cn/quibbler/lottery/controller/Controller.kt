@@ -14,4 +14,6 @@ interface Controller {
 
     fun goTop() {}
 
+    fun release() {}
+
 }
