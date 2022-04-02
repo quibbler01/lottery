@@ -13,6 +13,8 @@ object RouterCenter {
     const val self_activity_game_center = "$self_group/activity_game_center"
     const val self_activity_bounce = "$self_group/activity_bounce"
 
+    const val self_person_home_page = "$self_group/person_home"
+
     const val news_detail_activity = "/news/detail"
     const val argument_news_url = "url"
 

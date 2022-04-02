@@ -37,6 +37,7 @@ class SelfPageController : Controller, View.OnClickListener {
 
         binding.myMessage.setOnClickListener(this)
         binding.mySettings.setOnClickListener(this)
+        binding.userLayout.setOnClickListener(this)
     }
 
     override fun getView(): View = binding.root
@@ -59,6 +60,11 @@ class SelfPageController : Controller, View.OnClickListener {
             R.id.my_settings -> {
                 ARouter.getInstance().build(RouterCenter.settings_activity)
                         .withString(RouterCenter.argument_title, getAppString(R.string.settings))
+                        .navigation()
+            }
+            R.id.user_layout -> {
+                ARouter.getInstance().build(RouterCenter.self_person_home_page)
+                        .withString(RouterCenter.argument_title, getAppString(R.string.person_home))
                         .navigation()
             }
         }

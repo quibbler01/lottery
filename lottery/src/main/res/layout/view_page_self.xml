@@ -44,11 +44,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/top"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="80dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="@dimen/my_page_margin"
-        android:paddingTop="50dp"
         android:paddingEnd="@dimen/my_page_margin"
         android:paddingBottom="10dp">
 

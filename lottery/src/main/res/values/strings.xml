@@ -63,6 +63,7 @@
     <string name="notify">通知</string>
     <string name="message">消息</string>
     <string name="settings">设置</string>
+    <string name="person_home">个人主页</string>
     <string name="featured">每日精选</string>
     <string name="topic">专题</string>
     <string name="sign_in_now">立即签到</string>
