@@ -19,6 +19,32 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-dontskipnonpubliclibraryclassmembers
+-printconfiguration
+
+#所有使用Keep注解不混淆的类、方法、成员.
+-keep,allowobfuscation interface androidx.annotation.Keep
+-keep @androidx.annotation.Keep class *
+-keepclassmembers class * {
+    @androidx.annotation.Keep * ;
+}
+
+#不能混淆注解
+-keepattributes *Annotation*
+
+#不能混淆枚举中的value和valuOf方法
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+#Native方法不能混淆
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+#三方库自己的不能混淆规则
 -keep public class com.alibaba.android.arouter.routes.**{*;}
 -keep public class com.alibaba.android.arouter.facade.**{*;}
 -keep class * implements com.alibaba.android.arouter.facade.template.ISyringe{*;}
