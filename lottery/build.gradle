@@ -46,10 +46,10 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    //implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
 
     //https://github.com/scwang90/MultiWaveHeader
-    api files('libs/MultiWaveHeader-1.0.0.aar')
+    api files('libs/MultiWaveHeader-andx.aar')
 
     implementation "androidx.core:core-ktx:1.7.0"
     implementation "androidx.recyclerview:recyclerview:1.2.1"
