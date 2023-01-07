@@ -1,8 +1,8 @@
 package cn.quibbler.lottery.utils;
 
+import static cn.quibbler.lottery.LotteryApplication.handler;
+
 import android.graphics.Color;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -23,7 +23,6 @@ public class TextSwitcherAnimation {
     private AnimationSet OutAnimationSet;
 
     private int delayTime = 2000;
-    private Handler handler = new Handler(Looper.getMainLooper());
     private Runnable task = new Runnable() {
         @Override
         public void run() {
