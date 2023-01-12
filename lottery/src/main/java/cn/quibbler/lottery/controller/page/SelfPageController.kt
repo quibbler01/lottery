@@ -42,7 +42,7 @@ class SelfPageController : Controller, View.OnClickListener {
 
     override fun getView(): View = binding.root
 
-    override fun getDescription(): String? = getAppString(R.string.tab_label_my)
+    override fun getDescription(): String = getAppString(R.string.tab_label_my)
 
     override fun getDrawableIcon(selected: Boolean): Drawable? = if (selected) {
         getAppDrawable(R.drawable.tab_my_selected)
@@ -53,17 +53,20 @@ class SelfPageController : Controller, View.OnClickListener {
     override fun onClick(v: View) {
         when (v.id) {
             R.id.my_message -> {
-                ARouter.getInstance().build(RouterCenter.message_activity)
+                ARouter.getInstance()
+                        .build(RouterCenter.message_activity)
                         .withString(RouterCenter.argument_title, getAppString(R.string.message))
                         .navigation()
             }
             R.id.my_settings -> {
-                ARouter.getInstance().build(RouterCenter.settings_activity)
+                ARouter.getInstance()
+                        .build(RouterCenter.settings_activity)
                         .withString(RouterCenter.argument_title, getAppString(R.string.settings))
                         .navigation()
             }
             R.id.user_layout -> {
-                ARouter.getInstance().build(RouterCenter.self_person_home_page)
+                ARouter.getInstance()
+                        .build(RouterCenter.self_person_home_page)
                         .withString(RouterCenter.argument_title, getAppString(R.string.person_home))
                         .navigation()
             }
