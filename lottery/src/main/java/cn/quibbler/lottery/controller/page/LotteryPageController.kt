@@ -4,7 +4,7 @@ import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import cn.quibbler.lottery.LotteryApplication
-import cn.quibbler.lottery.LotteryApplication.Companion.getContext
+import cn.quibbler.lottery.LotteryApplication.Companion.getApplicationContext
 import cn.quibbler.lottery.R
 import cn.quibbler.lottery.controller.Controller
 import cn.quibbler.lottery.databinding.ViewPageLotteryBinding
@@ -18,13 +18,13 @@ class LotteryPageController : Controller, LoadCallback {
 
     private val binding = ViewPageLotteryBinding.inflate(LotteryApplication.getInflater())
     private val adapter = LotteryPageRecyclerViewAdapter()
-    private val layoutManager = LinearLayoutManager(getContext())
+    private val layoutManager = LinearLayoutManager(getApplicationContext())
 
     init {
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
 
-        binding.smartRefreshLayout.setRefreshHeader(ClassicsHeader(getContext()))
+        binding.smartRefreshLayout.setRefreshHeader(ClassicsHeader(getApplicationContext()))
         binding.smartRefreshLayout.setOnRefreshListener {
             it.finishRefresh(1000)
         }

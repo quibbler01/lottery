@@ -18,7 +18,7 @@ class LotteryApplication : Application() {
         lateinit var layoutInflater: LayoutInflater
         lateinit var handler: Handler
 
-        fun getContext(): Context = application
+        fun getApplicationContext(): Context = application
         fun getInflater(): LayoutInflater = layoutInflater
         fun getMainHandler(): Handler = handler
     }

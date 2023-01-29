@@ -4,16 +4,16 @@ import android.content.Context
 import android.content.res.AssetManager
 import android.graphics.drawable.Drawable
 import androidx.appcompat.content.res.AppCompatResources
-import cn.quibbler.lottery.LotteryApplication.Companion.getContext
+import cn.quibbler.lottery.LotteryApplication.Companion.getApplicationContext
 import java.io.IOException
 import java.io.InputStream
 import java.nio.charset.StandardCharsets
 
 fun getAppDrawable(id: Int): Drawable? {
-    return AppCompatResources.getDrawable(getContext(), id)
+    return AppCompatResources.getDrawable(getApplicationContext(), id)
 }
 
-fun getAppString(id: Int): String = getContext().getString(id)
+fun getAppString(id: Int): String = getApplicationContext().getString(id)
 
 
 fun getStringFromAsset(context: Context, fileName: String): String {

@@ -17,13 +17,13 @@ class ExpertPageController : Controller, LoadCallback {
 
     private val binding = ViewPageExpertBinding.inflate(LotteryApplication.getInflater())
     private val adapter = ExpertRecyclerViewAdapter()
-    private val layoutManager = LinearLayoutManager(LotteryApplication.getContext())
+    private val layoutManager = LinearLayoutManager(LotteryApplication.getApplicationContext())
 
     init {
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
 
-        binding.smartRefreshLayout.setRefreshHeader(ClassicsHeader(LotteryApplication.getContext()))
+        binding.smartRefreshLayout.setRefreshHeader(ClassicsHeader(LotteryApplication.getApplicationContext()))
         binding.smartRefreshLayout.setOnRefreshListener {
             it.finishRefresh(1000)
         }

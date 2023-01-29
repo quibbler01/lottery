@@ -3,7 +3,7 @@ package cn.quibbler.lottery.controller.page
 import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import cn.quibbler.lottery.LotteryApplication.Companion.getContext
+import cn.quibbler.lottery.LotteryApplication.Companion.getApplicationContext
 import cn.quibbler.lottery.LotteryApplication.Companion.getInflater
 import cn.quibbler.lottery.R
 import cn.quibbler.lottery.controller.Controller
@@ -15,7 +15,7 @@ import cn.quibbler.lottery.utils.getAppString
 class CommunityPageController : Controller {
 
     private val binding = ViewPageCommunityBinding.inflate(getInflater())
-    private val layoutManager = LinearLayoutManager(getContext())
+    private val layoutManager = LinearLayoutManager(getApplicationContext())
 
     init {
         binding.recyclerView.layoutManager = layoutManager

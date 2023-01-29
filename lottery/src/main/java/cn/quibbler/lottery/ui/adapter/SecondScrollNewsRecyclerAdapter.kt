@@ -3,7 +3,7 @@ package cn.quibbler.lottery.ui.adapter
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import cn.quibbler.lottery.LotteryApplication.Companion.getContext
+import cn.quibbler.lottery.LotteryApplication.Companion.getApplicationContext
 import cn.quibbler.lottery.LotteryApplication.Companion.getInflater
 import cn.quibbler.lottery.R
 import cn.quibbler.lottery.databinding.SecondScrollTextRecyclerItemBinding
@@ -15,7 +15,7 @@ class SecondScrollNewsRecyclerAdapter : RecyclerView.Adapter<SecondScrollNewsRec
     private var switcherAnnotation: TextSwitcherAnimation? = null
 
     init {
-        val l = getContext().resources.getStringArray(R.array.scroll_text_list)
+        val l = getApplicationContext().resources.getStringArray(R.array.scroll_text_list)
         for (i in l) {
             list.add(i)
         }

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import cn.quibbler.lottery.LotteryApplication.Companion.getContext
+import cn.quibbler.lottery.LotteryApplication
 import cn.quibbler.lottery.LotteryApplication.Companion.getInflater
 import cn.quibbler.lottery.R
 import cn.quibbler.lottery.databinding.ActivityCenterBinding
@@ -13,7 +13,6 @@ import cn.quibbler.lottery.model.RouterCenter
 import cn.quibbler.lottery.model.bean.ActivityCenterItem
 import cn.quibbler.lottery.utils.getAppDrawable
 import cn.quibbler.lottery.utils.getAppString
-import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 
 @Route(path = RouterCenter.self_activity_center)
@@ -30,7 +29,7 @@ class ActivityCenterActivity : BaseActivity() {
     }
 
     private fun initView() {
-        binding.recyclerView.layoutManager = LinearLayoutManager(getContext())
+        binding.recyclerView.layoutManager = LinearLayoutManager(LotteryApplication.getApplicationContext())
         binding.recyclerView.adapter = ActivityItemRecyclerViewAdapter()
     }
 

@@ -3,7 +3,7 @@ package cn.quibbler.lottery.ui.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import cn.quibbler.lottery.LotteryApplication.Companion.getContext
+import cn.quibbler.lottery.LotteryApplication.Companion.getApplicationContext
 import cn.quibbler.lottery.LotteryApplication.Companion.getInflater
 import cn.quibbler.lottery.databinding.FifthRecyclerItemBinding
 import cn.quibbler.lottery.databinding.LotterySevenNumsItemBinding
@@ -18,7 +18,7 @@ class FifthFeaturedRecyclerAdapter : RecyclerView.Adapter<FifthFeaturedRecyclerA
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.recycler.layoutManager = LinearLayoutManager(getContext())
+        holder.binding.recycler.layoutManager = LinearLayoutManager(getApplicationContext())
         holder.binding.recycler.adapter = FeatureRecyclerAdapter()
     }
 

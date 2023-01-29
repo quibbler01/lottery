@@ -5,7 +5,7 @@ import android.view.View
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import cn.quibbler.lottery.LotteryApplication
-import cn.quibbler.lottery.LotteryApplication.Companion.getContext
+import cn.quibbler.lottery.LotteryApplication.Companion.getApplicationContext
 import cn.quibbler.lottery.R
 import cn.quibbler.lottery.controller.Controller
 import cn.quibbler.lottery.databinding.ViewPageHomeBinding
@@ -28,7 +28,7 @@ class HomePageController : Controller, LoadCallback {
     private val concatAdapter: ConcatAdapter = ConcatAdapter(firstAdapter, secondAdapter, thirdAdapter, fourthAdapter, fifthAdapter, sixAdapter)
 
     init {
-        layoutManager = LinearLayoutManager(getContext())
+        layoutManager = LinearLayoutManager(getApplicationContext())
         layoutManager.isAutoMeasureEnabled = true
         binding.mainMixedRecyclerView.layoutManager = layoutManager
         binding.mainMixedRecyclerView.adapter = concatAdapter

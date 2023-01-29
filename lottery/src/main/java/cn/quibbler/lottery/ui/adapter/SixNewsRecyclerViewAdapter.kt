@@ -1,22 +1,18 @@
 package cn.quibbler.lottery.ui.adapter
 
 import android.text.Html
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import cn.quibbler.lottery.LotteryApplication.Companion.getContext
+import cn.quibbler.lottery.LotteryApplication.Companion.getApplicationContext
 import cn.quibbler.lottery.LotteryApplication.Companion.getInflater
 import cn.quibbler.lottery.databinding.NewsItemLayoutBinding
 import cn.quibbler.lottery.databinding.NewsRecyclerViewBinding
 import cn.quibbler.lottery.model.NewsRepository
 import cn.quibbler.lottery.model.RouterCenter
-import cn.quibbler.lottery.model.bean.NewsChannels
 import cn.quibbler.lottery.model.bean.NewsLists
 import cn.quibbler.lottery.repository.LoadCallback
-import cn.quibbler.lottery.repository.network.retrofit.NewsService
-import cn.quibbler.lottery.repository.network.retrofit.RetrofitHelper
 import com.alibaba.android.arouter.launcher.ARouter
 import com.bumptech.glide.Glide
 import retrofit2.Call
@@ -33,7 +29,7 @@ class SixNewsRecyclerViewAdapter : RecyclerView.Adapter<SixNewsRecyclerViewAdapt
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val layoutManager = LinearLayoutManager(getContext())
+        val layoutManager = LinearLayoutManager(getApplicationContext())
         layoutManager.isAutoMeasureEnabled = true
         holder.binding.recyclerView.layoutManager = layoutManager
         holder.binding.recyclerView.adapter = adapter

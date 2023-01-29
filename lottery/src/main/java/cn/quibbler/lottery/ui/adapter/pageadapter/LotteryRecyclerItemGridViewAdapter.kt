@@ -3,14 +3,14 @@ package cn.quibbler.lottery.ui.adapter.pageadapter
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import cn.quibbler.lottery.LotteryApplication.Companion.getContext
+import cn.quibbler.lottery.LotteryApplication.Companion.getApplicationContext
 import cn.quibbler.lottery.LotteryApplication.Companion.getInflater
 import cn.quibbler.lottery.R
 import cn.quibbler.lottery.databinding.LotteryGridViewItemBinding
 
 class LotteryRecyclerItemGridViewAdapter : BaseAdapter() {
 
-    private val list = getContext().resources.getStringArray(R.array.lottery_grid_items)
+    private val list = getApplicationContext().resources.getStringArray(R.array.lottery_grid_items)
 
     override fun getCount(): Int = list.size
 
