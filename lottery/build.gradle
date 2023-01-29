@@ -52,11 +52,11 @@ dependencies {
     //https://github.com/scwang90/MultiWaveHeader
     api files('libs/MultiWaveHeader-andx.aar')
 
-    implementation "androidx.core:core-ktx:1.7.0"
+    implementation "androidx.core:core-ktx:1.9.0"
     implementation "androidx.recyclerview:recyclerview:1.2.1"
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     //https://github.com/vinc3m1/RoundedImageView
     implementation 'com.makeramen:roundedimageview:2.3.0'
@@ -72,11 +72,11 @@ dependencies {
     implementation 'com.robinhood.ticker:ticker:2.0.4'
 
     //https://github.com/bumptech/glide
-    implementation 'com.github.bumptech.glide:glide:4.13.0'
-    kapt 'com.github.bumptech.glide:compiler:4.13.0'
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    kapt 'com.github.bumptech.glide:compiler:4.13.2'
 
     //https://github.com/google/gson
-    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.9.1'
 
     //https://github.com/square/retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
