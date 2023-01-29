@@ -39,7 +39,6 @@ class NewsDetailActivity : BaseActivity() {
         setting.javaScriptCanOpenWindowsAutomatically = false
         setting.defaultTextEncodingName = "utf-8"
         //cache
-        setting.setAppCacheEnabled(false)
         setting.cacheMode = WebSettings.LOAD_CACHE_ELSE_NETWORK
 
         url?.let { binding.webView.loadUrl(it) }
