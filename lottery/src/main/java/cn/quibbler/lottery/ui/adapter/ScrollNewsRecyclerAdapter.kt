@@ -9,7 +9,7 @@ import cn.quibbler.lottery.R
 import cn.quibbler.lottery.databinding.SecondScrollTextRecyclerItemBinding
 import cn.quibbler.lottery.utils.TextSwitcherAnimation
 
-class SecondScrollNewsRecyclerAdapter : RecyclerView.Adapter<SecondScrollNewsRecyclerAdapter.ViewHolder>() {
+class ScrollNewsRecyclerAdapter : RecyclerView.Adapter<ScrollNewsRecyclerAdapter.ViewHolder>() {
 
     private val list: ArrayList<String> = ArrayList()
     private var switcherAnnotation: TextSwitcherAnimation? = null

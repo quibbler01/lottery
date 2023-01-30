@@ -19,16 +19,18 @@ class LotteryApplication : Application() {
         lateinit var handler: Handler
 
         fun getApplicationContext(): Context = application
+
         fun getInflater(): LayoutInflater = layoutInflater
+
         fun getMainHandler(): Handler = handler
     }
 
     init {
         SmartRefreshLayout.setDefaultRefreshHeaderCreator { context, layout ->
-            BezierRadarHeader(context).setPrimaryColor(Color.parseColor("#e8354b"))
+            BezierRadarHeader(context).setPrimaryColor(context.getColor(R.color.refresh_color))
         }
         SmartRefreshLayout.setDefaultRefreshFooterCreator { context, layout ->
-            BallPulseFooter(context).setAnimatingColor(Color.parseColor("#e8354b"))
+            BallPulseFooter(context).setAnimatingColor(context.getColor(R.color.refresh_color))
         }
     }
 

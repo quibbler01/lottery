@@ -15,7 +15,6 @@ fun getAppDrawable(id: Int): Drawable? {
 
 fun getAppString(id: Int): String = getApplicationContext().getString(id)
 
-
 fun getStringFromAsset(context: Context, fileName: String): String {
     var str = ""
     val assetManager: AssetManager = context.getAssets()
@@ -25,7 +24,7 @@ fun getStringFromAsset(context: Context, fileName: String): String {
         val buffer = ByteArray(length)
         inputStream.read(buffer)
         str = String(buffer, StandardCharsets.UTF_8)
-    } catch (e: IOException) {
+    } catch (ignore: IOException) {
     }
     return str
 }

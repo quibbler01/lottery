@@ -19,7 +19,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SixNewsRecyclerViewAdapter : RecyclerView.Adapter<SixNewsRecyclerViewAdapter.ViewHolder>() {
+class NewsRecyclerViewAdapter : RecyclerView.Adapter<NewsRecyclerViewAdapter.ViewHolder>() {
 
     private val adapter = NewsRecyclerViewAdapter()
 

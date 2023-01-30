@@ -9,7 +9,7 @@ import cn.quibbler.lottery.databinding.ThirdGridCaardRecyclerItemBinding
 import cn.quibbler.lottery.model.RouterCenter
 import com.alibaba.android.arouter.launcher.ARouter
 
-class ThirdCardRecyclerAdapter : RecyclerView.Adapter<ThirdCardRecyclerAdapter.ViewHolder>() {
+class CardRecyclerAdapter : RecyclerView.Adapter<CardRecyclerAdapter.ViewHolder>() {
 
     private val adapter = FunctionCardGridViewAdapter()
 

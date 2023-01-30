@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import cn.quibbler.lottery.LotteryApplication
 import cn.quibbler.lottery.databinding.FourthTwoCardRecyclerItemBinding
 
-class FourthChooseNumRecyclerAdapter : RecyclerView.Adapter<FourthChooseNumRecyclerAdapter.ViewHolder>() {
+class ChooseNumRecyclerAdapter : RecyclerView.Adapter<ChooseNumRecyclerAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = FourthTwoCardRecyclerItemBinding.inflate(LotteryApplication.getInflater(), parent, false)

@@ -22,4 +22,6 @@
     <color name="confirm">#CCF21F1F</color>
     <color name="un_confirm">#A6F84848</color>
 
+    <color name="refresh_color">#e8354b</color>
+
 </resources>

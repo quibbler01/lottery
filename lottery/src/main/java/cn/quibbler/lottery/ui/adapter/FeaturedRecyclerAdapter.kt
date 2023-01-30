@@ -10,7 +10,7 @@ import cn.quibbler.lottery.databinding.LotterySevenNumsItemBinding
 import cn.quibbler.lottery.model.Repository
 import cn.quibbler.lottery.model.bean.LotteryItem
 
-class FifthFeaturedRecyclerAdapter : RecyclerView.Adapter<FifthFeaturedRecyclerAdapter.ViewHolder>() {
+class FeaturedRecyclerAdapter : RecyclerView.Adapter<FeaturedRecyclerAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = FifthRecyclerItemBinding.inflate(getInflater(), parent, false)

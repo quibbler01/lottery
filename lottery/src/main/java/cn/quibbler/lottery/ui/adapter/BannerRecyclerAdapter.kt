@@ -6,7 +6,7 @@ import cn.quibbler.lottery.LotteryApplication.Companion.getInflater
 import cn.quibbler.lottery.databinding.FirstBannerRecyclerItemBinding
 import cn.quibbler.lottery.ui.adapter.pageadapter.BannerViewPagerAdapter
 
-class FirstBannerRecyclerAdapter : RecyclerView.Adapter<FirstBannerRecyclerAdapter.ViewHolder>() {
+class BannerRecyclerAdapter : RecyclerView.Adapter<BannerRecyclerAdapter.ViewHolder>() {
 
     private val adapter = BannerViewPagerAdapter()
 

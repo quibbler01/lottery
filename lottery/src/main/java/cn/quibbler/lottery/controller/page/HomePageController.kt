@@ -17,18 +17,18 @@ import cn.quibbler.lottery.utils.getAppString
 class HomePageController : Controller, LoadCallback {
 
     private val binding = ViewPageHomeBinding.inflate(LotteryApplication.getInflater())
-    private lateinit var layoutManager: LinearLayoutManager
+    private var layoutManager: LinearLayoutManager = LinearLayoutManager(getApplicationContext())
 
-    private val firstAdapter = FirstBannerRecyclerAdapter()
-    private val secondAdapter = SecondScrollNewsRecyclerAdapter()
-    private val thirdAdapter = ThirdCardRecyclerAdapter()
-    private val fourthAdapter = FourthChooseNumRecyclerAdapter()
-    private val fifthAdapter = FifthFeaturedRecyclerAdapter()
-    private val sixAdapter = SixNewsRecyclerViewAdapter()
+    private val firstAdapter = BannerRecyclerAdapter()
+    private val secondAdapter = ScrollNewsRecyclerAdapter()
+    private val thirdAdapter = CardRecyclerAdapter()
+    private val fourthAdapter = ChooseNumRecyclerAdapter()
+    private val fifthAdapter = FeaturedRecyclerAdapter()
+    private val sixAdapter = NewsRecyclerViewAdapter()
+
     private val concatAdapter: ConcatAdapter = ConcatAdapter(firstAdapter, secondAdapter, thirdAdapter, fourthAdapter, fifthAdapter, sixAdapter)
 
     init {
-        layoutManager = LinearLayoutManager(getApplicationContext())
         layoutManager.isAutoMeasureEnabled = true
         binding.mainMixedRecyclerView.layoutManager = layoutManager
         binding.mainMixedRecyclerView.adapter = concatAdapter
