@@ -112,4 +112,7 @@ dependencies {
 
     //https://square.github.io/leakcanary/
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.8.1'
+
+    //https://github.com/Tencent/MMKV
+    implementation 'com.tencent:mmkv:1.2.15'
 }

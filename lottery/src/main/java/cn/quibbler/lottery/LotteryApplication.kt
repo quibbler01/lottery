@@ -10,6 +10,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.scwang.smart.refresh.footer.BallPulseFooter
 import com.scwang.smart.refresh.header.BezierRadarHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
+import com.tencent.mmkv.MMKV
 
 class LotteryApplication : Application() {
 
@@ -54,6 +55,8 @@ class LotteryApplication : Application() {
             ARouter.openDebug()
         }
         ARouter.init(this)
+
+        MMKV.initialize(this)
     }
 
 }
