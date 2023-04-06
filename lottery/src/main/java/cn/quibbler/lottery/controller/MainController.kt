@@ -29,6 +29,7 @@ class MainController() : Controller {
         binding.viewPager.adapter = MainViewPagerAdapter(controllers)
 
         binding.tabLayout.setupWithViewPager(binding.viewPager)
+        binding.tabLayout.tabRippleColor = null
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             var lastClickTime: Long = 0L
             var lastClickPosition: Int = 0
