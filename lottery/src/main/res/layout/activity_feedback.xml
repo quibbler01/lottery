@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_gray_background"
+    android:paddingTop="12dp"
+    tools:context=".ui.activity.FeedbackActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/button_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/submit_feedback_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/submit_disable_bg"
+            android:clickable="true"
+            android:enabled="false"
+            android:gravity="center"
+            android:lines="1"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/submit_feedback"
+            android:textColor="@color/disable_button_color"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/question_classify"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/question_classify"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/question_feedback_bg"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/choose_question"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:paddingStart="15dp"
+                android:paddingEnd="0dp"
+                android:text="@string/question_choose_hit"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/down_arrow"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/down_arrow" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/question_description"
+        android:layout_width="match_parent"
+        android:layout_height="205dp"
+        android:layout_below="@id/question_classify"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="17dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/question_description"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/question_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/question_feedback_bg"
+            android:gravity="top|start"
+            android:hint="@string/question_description_hit"
+            android:padding="10dp"
+            android:textColorHint="#33000000" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/question_screen_area"
+        android:layout_width="match_parent"
+        android:layout_height="171dp"
+        android:layout_below="@id/question_description"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/question_screen_capture"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/image_choose_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>
