@@ -17,14 +17,15 @@ class MyCardAdapter : BaseAdapter() {
 
     init {
         cardList.add(CardItem(getAppString(R.string.my_card_activity_center), getAppDrawable(R.drawable.my_card_activity_center), RouterCenter.self_activity_center))
-        cardList.add(CardItem(getAppString(R.string.my_card_wechat), getAppDrawable(R.drawable.my_card_wechat), RouterCenter.self_activity_wechat))
-        cardList.add(CardItem(getAppString(R.string.my_card_task), getAppDrawable(R.drawable.my_card_task), RouterCenter.self_activity_task))
         cardList.add(CardItem(getAppString(R.string.my_card_news), getAppDrawable(R.drawable.my_card_news), RouterCenter.self_activity_information))
-        cardList.add(CardItem(getAppString(R.string.my_card_buy), getAppDrawable(R.drawable.my_card_buy), RouterCenter.self_activity_bought))
-        cardList.add(CardItem(getAppString(R.string.my_card_smiulate_record), getAppDrawable(R.drawable.my_card_smiulate_record), RouterCenter.self_activity_simulate))
+        cardList.add(CardItem(getAppString(R.string.my_card_task), getAppDrawable(R.drawable.my_card_task), RouterCenter.self_activity_task))
         cardList.add(CardItem(getAppString(R.string.my_card_help), getAppDrawable(R.drawable.my_card_help), RouterCenter.self_activity_help))
-        cardList.add(CardItem(getAppString(R.string.my_card_game_center), getAppDrawable(R.drawable.my_card_game_center), RouterCenter.self_activity_game_center))
-        cardList.add(CardItem(getAppString(R.string.my_card_bounce), getAppDrawable(R.drawable.my_card_bounce), RouterCenter.self_activity_bounce))
+        cardList.add(CardItem(getAppString(R.string.my_card_wechat), getAppDrawable(R.drawable.my_card_wechat), RouterCenter.self_activity_wechat))
+        cardList.add(CardItem(getAppString(R.string.my_card_share), getAppDrawable(R.drawable.my_card_share), RouterCenter.self_activity_share))
+        //cardList.add(CardItem(getAppString(R.string.my_card_buy), getAppDrawable(R.drawable.my_card_buy), RouterCenter.self_activity_bought))
+        //cardList.add(CardItem(getAppString(R.string.my_card_smiulate_record), getAppDrawable(R.drawable.my_card_smiulate_record), RouterCenter.self_activity_simulate))
+        //cardList.add(CardItem(getAppString(R.string.my_card_game_center), getAppDrawable(R.drawable.my_card_game_center), RouterCenter.self_activity_game_center))
+        //cardList.add(CardItem(getAppString(R.string.my_card_bounce), getAppDrawable(R.drawable.my_card_bounce), RouterCenter.self_activity_bounce))
     }
 
     override fun getCount(): Int = cardList.size
