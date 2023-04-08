@@ -114,4 +114,7 @@ dependencies {
 
     //https://github.com/Tencent/MMKV
     implementation 'com.tencent:mmkv:1.2.15'
+
+    //https://github.com/hackware1993/MagicIndicator
+    implementation 'com.github.hackware1993:MagicIndicator:1.7.0'
 }
