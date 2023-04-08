@@ -13,7 +13,7 @@
     <color name="tab_selected_text_color">#F21F1F</color>
     <color name="tab_unselected_text_color">#BD000000</color>
 
-    <color name="app_gray_background">#f0eff4</color>
+    <color name="app_gray_background">#f8f8f8</color>
     <color name="app_gray_bg">#40737376</color>
 
     <color name="red_num">#f84848</color>
@@ -23,5 +23,12 @@
     <color name="un_confirm">#A6F84848</color>
 
     <color name="refresh_color">#e8354b</color>
+
+    <color name="settings_text_color">#BF000000</color>
+    <color name="settings_line_color">#1A000000</color>
+
+    <color name="system_status_bar_color">#ffefe9</color>
+    <color name="self_bug_record_background_color">#fff6f7</color>
+    <color name="disable_button_color">#66FFFFFF</color>
 
 </resources>
