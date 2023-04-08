@@ -38,6 +38,8 @@ class SelfPageController : Controller, View.OnClickListener {
         binding.myMessage.setOnClickListener(this)
         binding.mySettings.setOnClickListener(this)
         binding.userLayout.setOnClickListener(this)
+        binding.buyRecord.setOnClickListener(this)
+        binding.simulateRecord.setOnClickListener(this)
     }
 
     override fun getView(): View = binding.root
@@ -52,23 +54,35 @@ class SelfPageController : Controller, View.OnClickListener {
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.my_message -> {
+            binding.myMessage.id -> {
                 ARouter.getInstance()
                         .build(RouterCenter.message_activity)
                         .withString(RouterCenter.argument_title, getAppString(R.string.message))
                         .navigation()
             }
-            R.id.my_settings -> {
+            binding.mySettings.id -> {
                 ARouter.getInstance()
                         .build(RouterCenter.settings_activity)
                         .withString(RouterCenter.argument_title, getAppString(R.string.settings))
                         .navigation()
             }
-            R.id.user_layout -> {
+            binding.userLayout.id -> {
                 ARouter.getInstance()
                         .build(RouterCenter.self_person_home_page)
                         .withString(RouterCenter.argument_title, getAppString(R.string.person_home))
                         .navigation()
+            }
+            binding.buyRecord.id -> {
+                ARouter.getInstance()
+                    .build(RouterCenter.self_buy_record)
+                    .withString(RouterCenter.argument_title, getAppString(R.string.bug_record_title))
+                    .navigation()
+            }
+            binding.simulateRecord.id -> {
+                ARouter.getInstance()
+                    .build(RouterCenter.self_activity_simulate)
+                    .withString(RouterCenter.argument_title, getAppString(R.string.simulate_record))
+                    .navigation()
             }
         }
     }

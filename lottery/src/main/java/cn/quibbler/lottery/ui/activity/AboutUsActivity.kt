@@ -20,6 +20,8 @@ class AboutUsActivity : BaseActivity(), View.OnClickListener {
         binding = ActivityAboutUsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.elevation = 0f
+
         initView()
     }
 
@@ -27,27 +29,41 @@ class AboutUsActivity : BaseActivity(), View.OnClickListener {
         binding.userAgreementLayout.setOnClickListener(this)
         binding.settingsPrivacyLayout.setOnClickListener(this)
         binding.settingsSocityLayout.setOnClickListener(this)
+        binding.settingsSocityAgreementLayout.setOnClickListener(this)
+        binding.settingsThirdShareListLayout.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
             binding.userAgreementLayout.id -> {
                 ARouter.getInstance().build(RouterCenter.settings_activity_about_user_agreement)
-                        .withString(RouterCenter.argument_title, getAppString(R.string.settings_user_agreement))
-                        .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.privacy)
-                        .navigation()
+                    .withString(RouterCenter.argument_title, getAppString(R.string.settings_user_agreement))
+                    .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.privacy)
+                    .navigation()
             }
             binding.settingsPrivacyLayout.id -> {
                 ARouter.getInstance().build(RouterCenter.settings_activity_about_privacy)
-                        .withString(RouterCenter.argument_title, getAppString(R.string.settings_privacy))
-                        .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.user_agreement)
-                        .navigation()
+                    .withString(RouterCenter.argument_title, getAppString(R.string.settings_privacy))
+                    .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.user_agreement)
+                    .navigation()
             }
             binding.settingsSocityLayout.id -> {
                 ARouter.getInstance().build(RouterCenter.settings_activity_about_socity)
-                        .withString(RouterCenter.argument_title, getAppString(R.string.settings_socity))
-                        .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.community_agreement)
-                        .navigation()
+                    .withString(RouterCenter.argument_title, getAppString(R.string.settings_socity))
+                    .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.community_principle)
+                    .navigation()
+            }
+            binding.settingsSocityAgreementLayout.id -> {
+                ARouter.getInstance().build(RouterCenter.settings_activity_about_socity)
+                    .withString(RouterCenter.argument_title, getAppString(R.string.settings_socity_agreement))
+                    .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.community_agreement)
+                    .navigation()
+            }
+            binding.settingsThirdShareListLayout.id -> {
+                ARouter.getInstance().build(RouterCenter.settings_activity_about_socity)
+                    .withString(RouterCenter.argument_title, getAppString(R.string.settings_third_share_list))
+                    .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.third_share_list)
+                    .navigation()
             }
         }
     }
