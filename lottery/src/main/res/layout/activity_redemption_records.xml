@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:background="@color/app_gray_background"
     android:orientation="vertical"
-    tools:context=".ui.activity.MessageNewFansActivity">
+    tools:context=".ui.activity.RedemptionRecordsActivity">
 
     <include
         android:id="@+id/no_date_view"
-        layout="@layout/no_fans_default_layout" />
+        layout="@layout/no_data_default_layout" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
