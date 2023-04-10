@@ -42,25 +42,25 @@ class AboutUsActivity : BaseActivity(), View.OnClickListener {
                     .navigation()
             }
             binding.settingsPrivacyLayout.id -> {
-                ARouter.getInstance().build(RouterCenter.settings_activity_about_privacy)
+                ARouter.getInstance().build(RouterCenter.settings_activity_about_user_agreement)
                     .withString(RouterCenter.argument_title, getAppString(R.string.settings_privacy))
                     .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.user_agreement)
                     .navigation()
             }
             binding.settingsSocityLayout.id -> {
-                ARouter.getInstance().build(RouterCenter.settings_activity_about_socity)
+                ARouter.getInstance().build(RouterCenter.settings_activity_about_user_agreement)
                     .withString(RouterCenter.argument_title, getAppString(R.string.settings_socity))
                     .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.community_principle)
                     .navigation()
             }
             binding.settingsSocityAgreementLayout.id -> {
-                ARouter.getInstance().build(RouterCenter.settings_activity_about_socity)
+                ARouter.getInstance().build(RouterCenter.settings_activity_about_user_agreement)
                     .withString(RouterCenter.argument_title, getAppString(R.string.settings_socity_agreement))
                     .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.community_agreement)
                     .navigation()
             }
             binding.settingsThirdShareListLayout.id -> {
-                ARouter.getInstance().build(RouterCenter.settings_activity_about_socity)
+                ARouter.getInstance().build(RouterCenter.settings_activity_about_user_agreement)
                     .withString(RouterCenter.argument_title, getAppString(R.string.settings_third_share_list))
                     .withString(RouterCenter.argument_file_name, PrivacyCommonViewActivity.third_share_list)
                     .navigation()
