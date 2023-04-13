@@ -19,6 +19,8 @@ class SettingPayActivity : BaseActivity(), View.OnClickListener {
         binding = ActivitySettingPayBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.elevation = 0f
+
         initViews()
     }
 
@@ -31,19 +33,19 @@ class SettingPayActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             binding.passwordLayout.id -> {
-                ARouter.getInstance().build(RouterCenter.settings_activity_pay_password)
-                        .withString(RouterCenter.argument_title, getAppString(R.string.set_pay_password))
-                        .navigation()
+                ARouter.getInstance().build(RouterCenter.settings_activity_pay_set_password)
+                    .withString(RouterCenter.argument_title, getAppString(R.string.set_pay_password))
+                    .navigation()
             }
             binding.backCardLayout.id -> {
                 ARouter.getInstance().build(RouterCenter.settings_activity_pay_bankcard)
-                        .withString(RouterCenter.argument_title, getAppString(R.string.bank_card))
-                        .navigation()
+                    .withString(RouterCenter.argument_title, getAppString(R.string.bank_card))
+                    .navigation()
             }
             binding.realNameLayout.id -> {
                 ARouter.getInstance().build(RouterCenter.settings_activity_pay_realname)
-                        .withString(RouterCenter.argument_title, getAppString(R.string.real_name_information))
-                        .navigation()
+                    .withString(RouterCenter.argument_title, getAppString(R.string.real_name_information))
+                    .navigation()
             }
         }
     }

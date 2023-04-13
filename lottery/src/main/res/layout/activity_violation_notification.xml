@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.ViolationNotificationActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/violation_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        app:tabIndicatorAnimationMode="linear"
+        app:tabIndicatorColor="@color/tab_selected_text_color"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="fixed"
+        app:tabRippleColor="@null"
+        app:tabSelectedTextColor="#E34141"
+        app:tabTextAppearance="@style/my_information_tab_text_style"
+        app:tabTextColor="#80000000"
+        app:tabUnboundedRipple="false" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/violation_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -11,14 +11,14 @@
     <LinearLayout
         android:id="@+id/password_layout"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/bg_change"
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp">
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
 
         <TextView
             android:id="@+id/label_password"
@@ -28,7 +28,7 @@
             android:gravity="center_vertical|start"
             android:text="@string/pay_password"
             android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switch_view"
@@ -41,14 +41,14 @@
     <LinearLayout
         android:id="@+id/back_card_layout"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/bg_change"
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp">
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
 
         <TextView
             android:id="@+id/back_card"
@@ -58,11 +58,11 @@
             android:gravity="center_vertical|start"
             android:text="@string/bank_card"
             android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
             android:layout_marginStart="10dp"
             android:src="@drawable/more_arrow" />
 
@@ -71,14 +71,14 @@
     <LinearLayout
         android:id="@+id/real_name_layout"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/bg_change"
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp">
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
 
         <TextView
             android:id="@+id/real_name_label"
@@ -88,7 +88,7 @@
             android:gravity="center_vertical|start"
             android:text="@string/real_name_information"
             android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -96,11 +96,12 @@
             android:layout_marginStart="10dp"
             android:minWidth="30dp"
             android:text="@string/to_fill_in"
-            android:textSize="16dp" />
+            android:textColor="#66000000"
+            android:textSize="14dp" />
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
             android:layout_marginStart="2dp"
             android:src="@drawable/more_arrow" />
 
