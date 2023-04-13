@@ -25,6 +25,8 @@ class ActivityCenterActivity : BaseActivity() {
         binding = ActivityCenterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.elevation = 3f
+
         initView()
     }
 

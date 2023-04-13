@@ -4,25 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_gray_background"
     android:orientation="vertical"
     tools:context=".ui.activity.MessageActivity">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabIndicatorColor="@color/tab_selected_text_color"
-        app:tabIndicatorFullWidth="false"
-        app:tabIndicatorGravity="bottom"
-        app:tabMode="fixed"
-        app:tabRippleColor="@color/transparent"
-        app:tabSelectedTextColor="@color/black"
-        app:tabTextAppearance="@style/tab_label_text_style"
-        app:tabTextColor="@color/black" />
+        android:layout_height="96dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="4" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/message_recycler_view_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </LinearLayout>
