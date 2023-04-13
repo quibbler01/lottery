@@ -6,7 +6,7 @@
 
     <dimen name="my_top_button_icon">24dp</dimen>
 
-    <dimen name="my_head_icon">65dp</dimen>
+    <dimen name="my_head_icon">35dp</dimen>
     <dimen name="my_head_more_arrow">18dp</dimen>
 
     <dimen name="app_margin">12dp</dimen>

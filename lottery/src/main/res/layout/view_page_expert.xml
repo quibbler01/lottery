@@ -1,15 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.scwang.smart.refresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/smart_refresh_layout"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingStart="@dimen/app_margin"
-    android:paddingEnd="@dimen/app_margin">
+    android:background="@color/app_gray_background"
+    android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="48dp"
+        android:background="#ffefe9"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="12dp">
 
-</com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:background="@null"
+            app:tabIndicatorAnimationMode="linear"
+            app:tabIndicatorColor="@color/tab_selected_text_color"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorGravity="bottom"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="scrollable"
+            app:tabRippleColor="@null"
+            app:tabSelectedTextColor="#E34141"
+            app:tabTextAppearance="@style/my_information_tab_text_style"
+            app:tabTextColor="@color/black"
+            app:tabUnboundedRipple="false" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:scaleType="fitXY" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/app_margin"
+        android:paddingEnd="@dimen/app_margin" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
