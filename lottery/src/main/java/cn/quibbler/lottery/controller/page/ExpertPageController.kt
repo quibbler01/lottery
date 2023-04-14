@@ -17,7 +17,6 @@ class ExpertPageController : Controller {
     init {
         binding.tabLayout.setupWithViewPager(binding.viewPager)
         binding.viewPager.adapter = ExpertPageAdapter()
-
     }
 
     override fun getView(): View = binding.root
