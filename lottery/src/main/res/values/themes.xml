@@ -8,7 +8,7 @@
         <item name="windowActionBar">false</item>
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowDisablePreview">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/system_status_bar_color</item>
         <item name="android:windowLightStatusBar">true</item>
 
         <item name="android:navigationBarColor">@color/white</item>
@@ -24,7 +24,9 @@
 
         <item name="android:navigationBarColor">@color/white</item>
         <item name="android:windowLightNavigationBar">true</item>
+        <!--change support action bar height-->
+        <item name="actionBarSize">@dimen/action_bar_height</item>
+        <item name="android:windowTitleSize">@dimen/action_bar_height</item>
     </style>
-
 
 </resources>
