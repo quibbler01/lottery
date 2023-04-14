@@ -1,6 +1,5 @@
 package cn.quibbler.lottery.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
