@@ -7,25 +7,34 @@ import cn.quibbler.lottery.databinding.ActivityMainBinding
 import cn.quibbler.lottery.ui.adapter.pageadapter.MainViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 
-class MainController() : Controller {
+object MainController : Controller {
+
+    const val HomePagePOS = 0
+    const val LotteryPagePOS = 1
+    const val ExpertPagePOS = 2
+    const val CommunityPagePOS = 3
+    const val SelfPagePOS = 4
 
     private var binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
-    private val controllers = ArrayList<Controller>()
+
+    fun selectPage(pos: Int) {
+        binding.viewPager.setCurrentItem(pos, true)
+    }
+
+    private val controllers: List<Controller> = ArrayList<Controller>().apply {
+        add(HomePageController())
+        add(LotteryPageController())
+        add(ExpertPageController())
+        add(CommunityPageController())
+        add(SelfPageController())
+    }
 
     init {
-        initControllers()
         initView()
     }
 
-    private fun initControllers() {
-        controllers.add(HomePageController())
-        controllers.add(LotteryPageController())
-        controllers.add(ExpertPageController())
-        controllers.add(CommunityPageController())
-        controllers.add(SelfPageController())
-    }
-
     private fun initView() {
+        binding.viewPager.offscreenPageLimit = 4
         binding.viewPager.adapter = MainViewPagerAdapter(controllers)
 
         binding.tabLayout.setupWithViewPager(binding.viewPager)
