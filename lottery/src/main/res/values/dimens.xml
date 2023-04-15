@@ -11,9 +11,9 @@
 
     <dimen name="app_margin">12dp</dimen>
     <dimen name="recycler_item_margin">6dp</dimen>
-    <dimen name="banner_view_pager_size">124dp</dimen>
+    <dimen name="banner_view_pager_size">108dp</dimen>
 
-    <dimen name="ball_num_size_small">38dp</dimen>
+    <dimen name="ball_num_size_small">32dp</dimen>
     <dimen name="ball_num_margin_common">6dp</dimen>
     <dimen name="ball_num_margin_red_and_blue">12dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
