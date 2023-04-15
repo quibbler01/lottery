@@ -11,6 +11,131 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lottery">
         <activity
+            android:name=".ui.activity.toolsui.OmittedTreasureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.toolsui.NumberSelectionDistributionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.toolsui.MovingAverageAnalysisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.toolsui.RealTimeHotspotsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.toolsui.TrendAnalysisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.toolsui.DataStatisticsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.toolsui.VipMembershipActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.toolsui.BonusCalculatorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.toolsui.SimulatedNumberSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.toolsui.TrendChartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.toolsui.HistoricalLotteryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AboutSmartRecommendActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.OtherNotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ViolationNotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.FollowAndFansActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.PersonalDecorateCenterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.EditNickNameActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".ui.activity.EditPersonalInformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.BlackListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.PersonalSettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.RewardDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ColorfulBeanDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.RedemptionRecordsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ChargeDetailedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ExpiredCouponActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.CouponActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.IncentiveMoneyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ColorfulBeanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ChargeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.SystemNotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.SimulateRecordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.BuyRecordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AddBankCardActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".ui.activity.MessageNewFansActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MessageDotActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MessageThumbsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MessageCommentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MessageSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.FeedbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.CustomerServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.HelpAndFeedActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.PersonHomeActivity"
             android:exported="false" />
         <activity
@@ -26,8 +151,9 @@
             android:name=".ui.activity.RealNameActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.PasswordActivity"
-            android:exported="false" />
+            android:name=".ui.activity.SetPasswordActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".ui.activity.BankCardActivity"
             android:exported="false" />
