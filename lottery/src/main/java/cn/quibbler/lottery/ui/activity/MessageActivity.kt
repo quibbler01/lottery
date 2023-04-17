@@ -7,6 +7,7 @@ import cn.quibbler.lottery.R
 import cn.quibbler.lottery.databinding.ActivityMessageBinding
 import cn.quibbler.lottery.databinding.MessageNoticeHeadViewBinding
 import cn.quibbler.lottery.model.RouterCenter
+import cn.quibbler.lottery.ui.adapter.MessageNoticeRecyclerListAdapter
 import cn.quibbler.lottery.ui.adapter.MessageNoticeRecyclerViewAdapter
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
@@ -32,7 +33,7 @@ class MessageActivity : BaseActivity() {
 
         setCustomCenterView(headView.root)
         hideLeftTitle()
-        showTitleRightIcon(true, ResourcesCompat.getDrawable(resources, R.drawable.my_settings_icon, null)) {
+        showTitleRightIcon(ResourcesCompat.getDrawable(resources, R.drawable.my_settings_icon, null)) {
             ARouter.getInstance()
                 .build(RouterCenter.self_activity_message_settings)
                 .withString(RouterCenter.argument_title, getString(R.string.message_settings_title))
@@ -43,15 +44,9 @@ class MessageActivity : BaseActivity() {
     }
 
     private fun initViews() {
-        binding.recyclerView.layoutManager = GridLayoutManager(this, 4)
         binding.recyclerView.adapter = MessageNoticeRecyclerViewAdapter()
 
-        binding.systemNotificationView.setOnClickListener {
-            ARouter.getInstance()
-                .build(RouterCenter.self_activity_system_notification)
-                .withString(RouterCenter.argument_title, getString(R.string.system_notification))
-                .navigation()
-        }
+        binding.messageRecyclerViewList.adapter = MessageNoticeRecyclerListAdapter()
     }
 
 }
