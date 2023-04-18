@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_gray_background"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5fa"
+        android:gravity="center"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp">
+
+        <TextView
+            android:id="@+id/weekend_2"
+            android:layout_width="94dp"
+            android:layout_height="28dp"
+            android:background="@drawable/white_select_bg_with_corner"
+            android:gravity="center"
+            android:text="@string/tuesday"
+            android:textColor="@color/red_num"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/weekend_4"
+            android:layout_width="94dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/white_select_bg_with_corner"
+            android:gravity="center"
+            android:text="@string/thursday"
+            android:textColor="#B3000000"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/weekend_7"
+            android:layout_width="94dp"
+            android:layout_height="28dp"
+            android:background="@drawable/white_select_bg_with_corner"
+            android:gravity="center"
+            android:text="@string/sunday"
+            android:textColor="#B3000000"
+            android:textSize="12dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>
