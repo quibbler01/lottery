@@ -8,8 +8,6 @@ import cn.quibbler.lottery.controller.MainController
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var mainController: MainController
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -19,13 +17,12 @@ class MainActivity : AppCompatActivity() {
             window.attributes = layoutParam
         }
 
-        mainController = MainController()
-        setContentView(mainController.getView())
+        setContentView(MainController.getView())
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        mainController.release()
+        MainController.release()
     }
 
 }

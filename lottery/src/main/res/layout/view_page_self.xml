@@ -6,11 +6,17 @@
     android:background="@color/white">
 
     <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/wave_header"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="0dp"
+        android:layout_alignBottom="@id/fans_layout_container"
         android:layout_alignParentTop="true"
-        app:mwhCloseColor="#f8949f"
-        app:mwhStartColor="#ffefed" />
+        app:mwhCloseColor="@color/system_status_bar_color"
+        app:mwhGradientAngle="-90"
+        app:mwhStartColor="@color/system_status_bar_color"
+        app:mwhVelocity="3"
+        app:mwhWaveHeight="50dp"
+        app:mwhWaves="MultiWave" />
 
     <RelativeLayout
         android:id="@+id/top"
@@ -42,20 +48,20 @@
     <LinearLayout
         android:id="@+id/user_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@id/top"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="12dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="@dimen/my_page_margin"
-        android:paddingEnd="@dimen/my_page_margin"
-        android:paddingBottom="10dp">
+        android:paddingEnd="@dimen/my_page_margin">
 
         <ImageView
             android:id="@+id/my_head_icon"
             android:layout_width="@dimen/my_head_icon"
             android:layout_height="@dimen/my_head_icon"
-            android:src="@drawable/my_default_head_icon" />
+            android:clickable="true"
+            android:src="@drawable/default_head_icon" />
 
         <TextView
             android:id="@+id/my_loging_or_name"
@@ -67,7 +73,7 @@
             android:singleLine="true"
             android:text="@string/my_user_name_default_no_login"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18dp" />
 
         <ImageView
             android:id="@+id/my_more_info_arrow"
@@ -77,10 +83,123 @@
 
     </LinearLayout>
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/fans_layout_container"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/user_layout"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="14dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/dynamic_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dynamic_number_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dynamic_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/dynamic"
+                android:textColor="#99000000"
+                android:textSize="12dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="0.8dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#0A000000" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/follow_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/follow_number_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/follow_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/follow"
+                android:textColor="#99000000"
+                android:textSize="12dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="0.8dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#0A000000" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/fans_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fans_number_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fans_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/fans"
+                android:textColor="#99000000"
+                android:textSize="12dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
     <LinearLayout
+        android:id="@+id/function_layout_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/user_layout"
+        android:layout_below="@id/wave_header"
         android:background="@drawable/my_card_gray_background"
         android:orientation="vertical"
         android:paddingStart="@dimen/my_page_margin"
@@ -94,13 +213,123 @@
             android:background="@drawable/my_card_white_background"
             android:numColumns="4" />
 
+        <LinearLayout
+            android:id="@+id/self_buy_and_simulate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/my_page_margin"
+            android:background="@drawable/my_card_white_background"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <RelativeLayout
+                android:id="@+id/buy_record"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/my_buy_simulate_background">
+
+                <ImageView
+                    android:id="@+id/buy_record_icon"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/buy_record_bg" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_toStartOf="@id/buy_record_icon"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:text="@string/bug_record"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:lines="1"
+                        android:text="@string/bug_record_detail"
+                        android:textColor="#80000000"
+                        android:textSize="11.5dp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/simulate_record"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/my_buy_simulate_background">
+
+                <ImageView
+                    android:id="@+id/simulate_record_icon"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/simulate_record_bg" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_toStartOf="@id/simulate_record_icon"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:text="@string/simulate_record"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:lines="1"
+                        android:text="@string/simulate_tools"
+                        android:textColor="#80000000"
+                        android:textSize="11.5dp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
         <GridView
             android:id="@+id/my_all_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/my_page_margin"
             android:background="@drawable/my_card_white_background"
-            android:numColumns="3" />
+            android:numColumns="4"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
 
     </LinearLayout>
 

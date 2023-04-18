@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import cn.quibbler.lottery.controller.Controller
 
-class MainViewPagerAdapter(private val controllers: ArrayList<Controller>) : PagerAdapter() {
+class MainViewPagerAdapter(private val controllers: List<Controller>) : PagerAdapter() {
 
     override fun getCount(): Int = controllers.size
 
