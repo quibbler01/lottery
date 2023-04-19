@@ -13,7 +13,11 @@ class PrivacyCommonViewActivity : BaseActivity() {
     companion object {
         const val privacy = "privacy.html"
         const val user_agreement = "user_agreement.html"
+        const val community_principle = "community_principle.html"
         const val community_agreement = "community_agreement.html"
+        const val third_share_list = "third_share_list.html"
+        const val chargeAgreement = "charge_agreement.html"
+        const val colorfulBeanExplain = "colorful_bean_explain.html"
     }
 
     private lateinit var binding: ActivityPravicyCommonViewBinding
@@ -26,6 +30,8 @@ class PrivacyCommonViewActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPravicyCommonViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.elevation = 1f
 
         initViews()
     }
