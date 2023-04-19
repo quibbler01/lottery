@@ -21,8 +21,6 @@ class BannerRecyclerAdapter : RecyclerView.Adapter<BannerRecyclerAdapter.ViewHol
 
     override fun getItemCount(): Int = 1
 
-    class ViewHolder(val binding: FirstBannerRecyclerItemBinding) : RecyclerView.ViewHolder(binding.root) {
-
-    }
+    class ViewHolder(val binding: FirstBannerRecyclerItemBinding) : RecyclerView.ViewHolder(binding.root)
 
 }
