@@ -258,4 +258,7 @@
     <string name="sunday">周日</string>
     <string name="previous_issue">上一期</string>
     <string name="next_issue">下一期</string>
+    <string name="winning_list">中奖榜</string>
+    <string name="bonus_list">奖金榜</string>
+    <string name="popularity_chart">人气榜</string>
 </resources>
