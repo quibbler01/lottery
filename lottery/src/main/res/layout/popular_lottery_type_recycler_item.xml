@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/recycler_item_background"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|start"
+            android:text="福彩3D精选大师"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|start"
+            android:text="换个彩种"
+            android:textColor="#80000000"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/gray_shap_bg_with_corner"
+        android:padding="2dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/winning_list"
+                android:layout_width="66dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/white_bg_with_corner"
+                android:gravity="center"
+                android:text="@string/winning_list"
+                android:textColor="@color/red_num"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/bonus_list"
+                android:layout_width="66dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:gravity="center"
+                android:text="@string/bonus_list"
+                android:textColor="#B3000000"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/popularity_chart"
+                android:layout_width="66dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/popularity_chart"
+                android:textColor="#B3000000"
+                android:textSize="12dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:minHeight="84dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>

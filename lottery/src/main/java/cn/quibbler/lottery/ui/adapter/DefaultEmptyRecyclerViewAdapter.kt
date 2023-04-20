@@ -7,8 +7,6 @@ import cn.quibbler.lottery.databinding.DefaultEmptyRecyclerViewItemBinding
 
 class DefaultEmptyRecyclerViewAdapter : RecyclerView.Adapter<DefaultEmptyRecyclerViewAdapter.ViewHolder>() {
 
-    private val size = 3
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = DefaultEmptyRecyclerViewItemBinding.inflate(getInflater(), parent, false)
         return ViewHolder(binding)
@@ -18,7 +16,7 @@ class DefaultEmptyRecyclerViewAdapter : RecyclerView.Adapter<DefaultEmptyRecycle
 
     }
 
-    override fun getItemCount(): Int = size
+    override fun getItemCount(): Int = Int.MAX_VALUE
 
     class ViewHolder(val binding: DefaultEmptyRecyclerViewItemBinding) : RecyclerView.ViewHolder(binding.root)
 

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/white_bg_with_corner"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <TextView
+            android:id="@+id/choose_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/filter"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/filter_by_type"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/filter_button_select_bg"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:minWidth="83dp"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:id="@+id/filter_by_type_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/filter_by_type"
+                android:textColor="#B3000000"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/down_arrow" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/filter_by_period"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/filter_button_select_bg"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:minWidth="83dp"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:id="@+id/filter_by_period_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/filter_by_period"
+                android:textColor="#B3000000"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/down_arrow" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/filter_by_state"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/filter_button_select_bg"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:minWidth="83dp"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:id="@+id/filter_by_state_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/filter_by_state"
+                android:textColor="#B3000000"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/down_arrow" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <include layout="@layout/no_data_default_layout" />
+
+</LinearLayout>
