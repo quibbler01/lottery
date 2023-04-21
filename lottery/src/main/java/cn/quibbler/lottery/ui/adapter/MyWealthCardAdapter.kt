@@ -6,6 +6,7 @@ import android.widget.BaseAdapter
 import cn.quibbler.lottery.LotteryApplication.Companion.getInflater
 import cn.quibbler.lottery.R
 import cn.quibbler.lottery.databinding.WealthCardItemBinding
+import cn.quibbler.lottery.model.RouterCenter
 import cn.quibbler.lottery.model.bean.WealthItem
 import cn.quibbler.lottery.model.bean.WealthItem.Companion.defaultWealthNum
 import cn.quibbler.lottery.utils.getAppString
@@ -15,15 +16,11 @@ class MyWealthCardAdapter : BaseAdapter() {
     private val listOfWealth = ArrayList<WealthItem>()
 
     init {
-        listOfWealth.add(WealthItem(defaultWealthNum, getAppString(R.string.my_wealth_colored_diamonds)))
-        listOfWealth.add(WealthItem(defaultWealthNum, getAppString(R.string.my_wealth_colorful_bean)))
-        listOfWealth.add(WealthItem(defaultWealthNum, getAppString(R.string.my_wealth_incentive_money)))
-        listOfWealth.add(WealthItem(defaultWealthNum, getAppString(R.string.my_wealth_coupon)))
-
-        requestFromServer()
+        listOfWealth.add(WealthItem(defaultWealthNum, getAppString(R.string.my_wealth_colored_diamonds), RouterCenter.self_activity_charge, getAppString(R.string.recharge)))
+        listOfWealth.add(WealthItem(defaultWealthNum, getAppString(R.string.my_wealth_colorful_bean), RouterCenter.self_activity_color_bean, getAppString(R.string.my_wealth_colorful_bean)))
+        listOfWealth.add(WealthItem(defaultWealthNum, getAppString(R.string.my_wealth_incentive_money), RouterCenter.self_activity_incentive_money, getAppString(R.string.my_wealth_incentive_money)))
+        listOfWealth.add(WealthItem(defaultWealthNum, getAppString(R.string.my_wealth_coupon), RouterCenter.self_activity_coupon, getAppString(R.string.my_coupon)))
     }
-
-    private fun requestFromServer() {}
 
     override fun getCount(): Int = listOfWealth.size
 

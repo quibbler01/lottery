@@ -7,13 +7,12 @@ import cn.quibbler.lottery.databinding.LotteryPageRecyclerViewItemBinding
 import cn.quibbler.lottery.model.Repository
 import cn.quibbler.lottery.model.bean.OpenLotteryItem
 import cn.quibbler.lottery.repository.LoadCallback
-import cn.quibbler.lottery.ui.adapter.pageadapter.LotteryRecyclerItemGridViewAdapter
 import java.util.*
 import kotlin.collections.ArrayList
 
 class LotteryPageRecyclerViewAdapter : RecyclerView.Adapter<LotteryPageRecyclerViewAdapter.ViewHolder>() {
 
-    private val gridAdapter = LotteryRecyclerItemGridViewAdapter()
+    private val gridAdapter = LotteryToolViewRecyclerAdapter()
 
     private val list = ArrayList<OpenLotteryItem>()
 
