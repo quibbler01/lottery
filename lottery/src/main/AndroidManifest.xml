@@ -11,6 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lottery">
         <activity
+            android:name="cn.quibbler.lottery.ui.activity.toolsui.RainbowActivity"
+            android:exported="false" />
+        <activity
+            android:name="cn.quibbler.lottery.ui.activity.toolsui.GameCenterActivity"
+            android:exported="false" />
+        <activity
+            android:name="cn.quibbler.lottery.ui.activity.toolsui.OpenBounceActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.toolsui.OmittedTreasureActivity"
             android:exported="false" />
         <activity

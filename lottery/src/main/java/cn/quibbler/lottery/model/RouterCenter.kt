@@ -77,14 +77,14 @@ object RouterCenter {
 
     private const val tools_group = "/tools"
     const val historical_lottery_activity = "$tools_group/historical_lottery"
-    const val trend_chart_activity = "$tools_group/trend_chart"
-    const val simulated_number_selection_activity = "$tools_group/simulated_number_selection"
+    const val trend_chart_activity = function_trend_activity
+    const val simulated_number_selection_activity = function_simulate_activity
     const val bonus_calculator_activity = "$tools_group/bonus_calculator"
     const val vip_membership_activity = "$tools_group/vip_membership"
     const val data_statistics_activity = "$tools_group/data_statistics"
     const val trend_analysis_activity = "$tools_group/trend_analysis"
     const val real_time_hotspots_activity = "$tools_group/real_time_hotspots"
-    const val moving_average_analysis_activity = "$tools_group/moving_average_analysis"
-    const val number_selection_distribution_activity = "$tools_group/number_selection_distribution"
-    const val omitted_treasure_activity = "$tools_group/omitted_treasure"
+    const val moving_average_analysis_activity = function_analyze_activity
+    const val number_selection_distribution_activity = function_choose_activity
+    const val omitted_treasure_activity = function_pick_activity
 }
