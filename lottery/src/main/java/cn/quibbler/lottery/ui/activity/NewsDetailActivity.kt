@@ -1,7 +1,9 @@
 package cn.quibbler.lottery.ui.activity
 
 import android.os.Bundle
+import android.webkit.WebResourceRequest
 import android.webkit.WebSettings
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import cn.quibbler.lottery.databinding.ActivityNewsDetailBinding
 import cn.quibbler.lottery.model.RouterCenter
@@ -27,7 +29,11 @@ class NewsDetailActivity : BaseActivity() {
     }
 
     private fun initWebView() {
-        binding.webView.webViewClient = WebViewClient()
+        binding.webView.webViewClient = object : WebViewClient() {
+            override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+                return true
+            }
+        }
 
         val setting = binding.webView.settings
         setting.setSupportZoom(false)
@@ -37,7 +43,7 @@ class NewsDetailActivity : BaseActivity() {
         setting.domStorageEnabled = true
         setting.javaScriptEnabled = true
         setting.javaScriptCanOpenWindowsAutomatically = false
-        setting.defaultTextEncodingName = "utf-8"
+        setting.defaultTextEncodingName = "UTF-8"
         //cache
         setting.cacheMode = WebSettings.LOAD_CACHE_ELSE_NETWORK
 
