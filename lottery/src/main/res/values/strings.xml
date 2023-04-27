@@ -54,6 +54,7 @@
     <string name="lottery_grid_item_selection_distribution">选号分布</string>
     <string name="lottery_grid_item_missing_treasure">遗漏宝</string>
     <string name="my_user_name_default_no_login">登录/注册</string>
+    <string name="view_all_recommendations">查看全部推荐></string>
     <string name="my_information_great">我的赞</string>
     <string name="my_information_collection">我的收藏</string>
     <string name="my_information_comment">我的评论</string>
@@ -116,6 +117,8 @@
     <string name="follow">关注</string>
     <string name="sorry_no_data">抱歉，暂无数据</string>
     <string name="fans">粉丝</string>
+    <string name="explain">说明</string>
+    <string name="start_simulation">开始\n模拟</string>
     <string name="follow_or_fans">关注/粉丝</string>
     <string name="save_change">保存修改</string>
     <string name="hint_input_real_name">请输入真实姓名</string>

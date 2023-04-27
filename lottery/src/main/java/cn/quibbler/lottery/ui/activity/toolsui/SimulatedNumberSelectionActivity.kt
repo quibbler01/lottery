@@ -23,6 +23,7 @@ class SimulatedNumberSelectionActivity : BaseActivity() {
     }
 
     private fun initView() {
+        binding.viewPager.setCurrentItem(1, false)
         binding.viewPager.adapter = SimulatePageAdapter()
         binding.tabLayout.setupWithViewPager(binding.viewPager)
     }
