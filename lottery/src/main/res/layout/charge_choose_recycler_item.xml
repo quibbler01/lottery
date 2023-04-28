@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/choose_container"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:background="@drawable/charge_choose_list_item">
+
+    <ImageView
+        android:id="@+id/charge_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/charge_icon"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/charge_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/charge_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/pay_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/charge_number"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textSize="12dp" />
+
+    <ImageView
+        android:layout_width="62dp"
+        android:layout_height="74dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/charge_background" />
+
+    <ImageView
+        android:id="@+id/charge_icon_choose_corner"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/charge_icon_choose_corner"
+        android:visibility="gone" />
+
+</RelativeLayout>
