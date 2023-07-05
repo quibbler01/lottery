@@ -23,6 +23,72 @@
 -dontskipnonpubliclibraryclassmembers
 -printconfiguration
 
+# Retain generic type information for use by reflection by converters and adapters.
+-keepattributes Signature
+# Retain declared checked exceptions for use by a Proxy instance.
+-keepattributes Exceptions
+-keepattributes EnclosingMethod
+
+-keep class android.**{*;}
+-dontwarn android.**
+
+-keep class androidx.**{*;}
+-dontwarn androidx.**
+
+#retrofit2
+-keep class retrofit2.**{*;}
+-dontwarn retrofit2.**
+-dontwarn javax.annotation.**
+-dontwarn javax.inject.**
+# Platform calls Class.forName on types which do not exist on Android to determine platform.
+-dontnote retrofit2.Platform
+# Platform used when running on RoboVM on iOS. Will not be used at runtime.
+-dontnote retrofit2.Platform$IOS$MainThreadExecutor
+# Platform used when running on Java 8 VMs. Will not be used at runtime.
+-dontwarn retrofit2.Platform$Java8
+
+-keep class * implements retrofit2.** {
+ *;
+}
+
+-keep class * extends retrofit2.** {
+ *;
+}
+
+# OkHttp3
+-dontwarn okhttp3.logging.**
+-keep class okhttp3.internal.**{*;}
+
+# okhttp
+-dontwarn com.squareup.okhttp3.**
+-keep class com.squareup.okhttp3.** { *;}
+-dontwarn okio.**
+
+# Retrolambda
+-dontwarn java.lang.invoke.*
+
+-keep class **.R$* {
+ *;
+}
+
+-keepclassmembers class * {
+    void *(*Event);
+}
+
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+
+-keepclassmembers class * extends android.webkit.WebViewClient {
+    public void *(android.webkit.WebView, java.lang.String, android.graphics.Bitmap);
+    public boolean *(android.webkit.WebView, java.lang.String);
+}
+
 #所有使用Keep注解不混淆的类、方法、成员.
 -keep,allowobfuscation interface androidx.annotation.Keep
 -keep @androidx.annotation.Keep class *
@@ -54,3 +120,22 @@
 
 # 如果使用了 单类注入，即不定义接口实现 IProvider，需添加下面规则，保护实现
 -keep class * implements com.alibaba.android.arouter.facade.template.IProvider
+
+-keep class com.google.gson.**{*;}
+-dontwarn com.google.gson.*
+-keep class com.example.testing.retrofitdemo.bean.**{*;}
+
+-keep class com.alibaba.android.**{*;}
+-dontwarn com.alibaba.android.*
+
+-dontwarn javax.lang.model.element.Element
+
+##Glide
+-dontwarn com.bumptech.glide.**
+-keep class com.bumptech.glide.**{*;}
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.AppGlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
