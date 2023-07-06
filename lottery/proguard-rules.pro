@@ -139,3 +139,12 @@
   **[] $VALUES;
   public *;
 }
+
+-keep class cn.quibbler.lottery.ui.adapter.NewsRecyclerViewAdapter.**{
+ *;
+}
+
+-dontwarn android.support.**
+-keep class android.support.**{*;}
+
+-keep class cn.quibbler.lottery.model.bean.**{*;}
