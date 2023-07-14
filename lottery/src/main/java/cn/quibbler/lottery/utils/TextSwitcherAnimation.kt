@@ -1,118 +1,104 @@
-package cn.quibbler.lottery.utils;
+package cn.quibbler.lottery.utils
 
-import static cn.quibbler.lottery.LotteryApplication.handler;
+import android.graphics.Color
+import android.util.Log
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
+import android.view.animation.AnimationSet
+import android.view.animation.TranslateAnimation
+import android.widget.TextSwitcher
+import android.widget.TextView
+import cn.quibbler.lottery.LotteryApplication
 
-import android.graphics.Color;
-import android.util.Log;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.TranslateAnimation;
-import android.widget.TextSwitcher;
-import android.widget.TextView;
-
-import java.util.List;
-
-public class TextSwitcherAnimation {
-    private static final int DURATION = 1000;
-
-    private TextSwitcher textSwitcher;
-    private List<String> texts;
-    private int marker;
-    private AnimationSet InAnimationSet;
-    private AnimationSet OutAnimationSet;
-
-    private int delayTime = 2000;
-    private Runnable task = new Runnable() {
-        @Override
-        public void run() {
-            nextView();
-            handler.postDelayed(task, delayTime * 2L);
+class TextSwitcherAnimation(private var textSwitcher: TextSwitcher?, private var texts: List<String>) {
+    var marker = 0
+        private set
+    private var inAnimationSet: AnimationSet? = null
+    private var outAnimationSet: AnimationSet? = null
+    private var delayTime = 2000
+    private val task: Runnable = object : Runnable {
+        override fun run() {
+            nextView()
+            LotteryApplication.handler.postDelayed(this, delayTime * 2L)
         }
-    };
-
-    public TextSwitcherAnimation(TextSwitcher textSwitcher, List<String> texts) {
-        this.textSwitcher = textSwitcher;
-        this.texts = texts;
     }
 
-    public void start() {
-        stop();
-        handler.postDelayed(task, delayTime);
+    fun start() {
+        stop()
+        LotteryApplication.handler.postDelayed(task, delayTime.toLong())
     }
 
-    public void stop() {
-        handler.removeCallbacks(task);
+    fun stop() {
+        LotteryApplication.handler.removeCallbacks(task)
     }
 
-    public void end() {
-        stop();
-        textSwitcher = null;
+    fun end() {
+        stop()
+        textSwitcher = null
     }
 
-    public int getMarker() {
-        return marker;
+    fun setTexts(texts: List<String>): TextSwitcherAnimation {
+        this.texts = texts
+        return this
     }
 
-    public TextSwitcherAnimation setTexts(List<String> texts) {
-        this.texts = texts;
-        return this;
+    fun setDelayTime(delayTime: Int) {
+        this.delayTime = delayTime
     }
 
-    public void setDelayTime(int delayTime) {
-        this.delayTime = delayTime;
-    }
-
-    public void create() {
-        marker = 0;
-        if (texts == null) {
-            Log.w("TextSwitcherAnimation", "texts is null");
-            return;
+    fun create() {
+        marker = 0
+        if (texts.isEmpty()) {
+            Log.w("TextSwitcherAnimation", "texts is empty")
+            return
         }
         if (textSwitcher == null) {
-            Log.w("TextSwitcherAnimation", "textSwitcher is null");
-            return;
+            Log.w("TextSwitcherAnimation", "textSwitcher is null")
+            return
         }
-        textSwitcher.setText(texts.get(0));
-        createAnimation();
-        textSwitcher.setInAnimation(InAnimationSet);
-        textSwitcher.setOutAnimation(OutAnimationSet);
-        start();
+        textSwitcher?.setText(texts[0])
+        createAnimation()
+        textSwitcher?.inAnimation = inAnimationSet
+        textSwitcher?.outAnimation = outAnimationSet
+        start()
     }
 
-    private void createAnimation() {
-        AlphaAnimation alphaAnimation;
-        TranslateAnimation translateAnimation;
+    private fun createAnimation() {
 
-        int h = textSwitcher.getHeight();
+        var h = textSwitcher?.height ?: 0
         if (h <= 0) {
-            textSwitcher.measure(0, 0);
-            h = textSwitcher.getMeasuredHeight();
+            textSwitcher?.measure(0, 0)
+            h = textSwitcher?.measuredHeight ?: 0
         }
-
-        InAnimationSet = new AnimationSet(true);
-        OutAnimationSet = new AnimationSet(true);
-
-        alphaAnimation = new AlphaAnimation(0, 1);
-        translateAnimation = new TranslateAnimation(Animation.ABSOLUTE, 0, Animation.ABSOLUTE, 0,
-                Animation.ABSOLUTE, h, Animation.ABSOLUTE, 0);
-        InAnimationSet.addAnimation(alphaAnimation);
-        InAnimationSet.addAnimation(translateAnimation);
-        InAnimationSet.setDuration(DURATION);
-
-        alphaAnimation = new AlphaAnimation(1, 0);
-        translateAnimation = new TranslateAnimation(Animation.ABSOLUTE, 0, Animation.ABSOLUTE, 0,
-                Animation.ABSOLUTE, 0, Animation.ABSOLUTE, -h);
-        OutAnimationSet.addAnimation(alphaAnimation);
-        OutAnimationSet.addAnimation(translateAnimation);
-        OutAnimationSet.setDuration(DURATION);
+        inAnimationSet = AnimationSet(true)
+        outAnimationSet = AnimationSet(true)
+        var alphaAnimation: AlphaAnimation = AlphaAnimation(0f, 1f)
+        var translateAnimation: TranslateAnimation = TranslateAnimation(
+            Animation.ABSOLUTE, 0f, Animation.ABSOLUTE, 0f,
+            Animation.ABSOLUTE, h.toFloat(), Animation.ABSOLUTE, 0f
+        )
+        inAnimationSet?.addAnimation(alphaAnimation)
+        inAnimationSet?.addAnimation(translateAnimation)
+        inAnimationSet?.duration = DURATION.toLong()
+        alphaAnimation = AlphaAnimation(1f, 0f)
+        translateAnimation = TranslateAnimation(
+            Animation.ABSOLUTE, 0f, Animation.ABSOLUTE, 0f,
+            Animation.ABSOLUTE, 0f, Animation.ABSOLUTE, -h.toFloat()
+        )
+        outAnimationSet?.addAnimation(alphaAnimation)
+        outAnimationSet?.addAnimation(translateAnimation)
+        outAnimationSet?.duration = DURATION.toLong()
     }
 
-    private void nextView() {
-        marker = ++marker % texts.size();
-        TextView textView = (TextView) textSwitcher.getNextView();
-        textView.setTextColor(marker % 2 == 0 ? Color.RED : Color.BLACK);
-        textSwitcher.setText(texts.get(marker));
+    private fun nextView() {
+        marker = ++marker % texts.size
+        val textView = textSwitcher?.nextView as TextView
+        textView.setTextColor(if (marker % 2 == 0) Color.RED else Color.BLACK)
+        textSwitcher?.setText(texts[marker])
+    }
+
+    companion object {
+        private const val DURATION = 1000
     }
 
 }
