@@ -59,6 +59,7 @@
     <string name="my_information_collection">我的收藏</string>
     <string name="my_information_comment">我的评论</string>
     <string name="my_information_no_data_hint">抱歉，暂无数据</string>
+    <string name="you_don_t_follow_any_user">你还没有关注用户哦</string>
     <string name="no_fans_data_hint">啊哦~本页暂无相关内容哦~</string>
     <string name="my_bought_tab_label1">大师精选</string>
     <string name="my_bought_tab_label2">智能推荐</string>

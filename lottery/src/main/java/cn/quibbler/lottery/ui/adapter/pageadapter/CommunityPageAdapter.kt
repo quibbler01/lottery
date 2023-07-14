@@ -25,7 +25,7 @@ class CommunityPageAdapter : PagerAdapter() {
         return when (position) {
             0 -> {
                 val binding = NoDataDefaultLayoutBinding.inflate(LotteryApplication.layoutInflater, container, true)
-                binding.text.text = getAppString(R.string.sorry_no_data)
+                binding.text.text = getAppString(R.string.you_don_t_follow_any_user)
                 binding.root
             }
             2 -> {
