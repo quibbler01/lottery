@@ -2,6 +2,7 @@ package cn.quibbler.lottery.ui.adapter.pageadapter
 
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.PagerAdapter
@@ -9,8 +10,10 @@ import cn.quibbler.lottery.LotteryApplication
 import cn.quibbler.lottery.R
 import cn.quibbler.lottery.databinding.CommunityLuckyTicketPageItemBinding
 import cn.quibbler.lottery.databinding.NoDataDefaultLayoutBinding
-import cn.quibbler.lottery.ui.adapter.DefaultEmptyRecyclerViewAdapter
+import cn.quibbler.lottery.ui.adapter.communityadapter.*
+import cn.quibbler.lottery.ui.adapter.communityadapter.HotTopicAdapter
 import cn.quibbler.lottery.utils.getAppString
+import com.scwang.smart.refresh.layout.SmartRefreshLayout
 
 class CommunityPageAdapter : PagerAdapter() {
 
@@ -28,16 +31,17 @@ class CommunityPageAdapter : PagerAdapter() {
                 binding.text.text = getAppString(R.string.you_don_t_follow_any_user)
                 binding.root
             }
-            2 -> {
-                val binding = CommunityLuckyTicketPageItemBinding.inflate(LotteryApplication.layoutInflater, container, true)
-                binding.tabLayout.setupWithViewPager(binding.viewPager)
-                binding.viewPager.adapter = CommunityLuckyTicketPageAdapter()
-                binding.root
-            }
-            else -> {
+
+            1 -> {
                 val recyclerView = RecyclerView(container.context).apply {
                     layoutManager = LinearLayoutManager(LotteryApplication.application)
-                    adapter = DefaultEmptyRecyclerViewAdapter()
+                    adapter = ConcatAdapter().apply {
+                        addAdapter(CommunityFunctionAdapter())
+                        addAdapter(HotTopicAdapter())
+                        addAdapter(VotingTopicsAdapter())
+                        addAdapter(PersonalDecorateAdapter())
+                        addAdapter(CommunityPostAdapter())
+                    }
                     setPadding(
                         container.context.resources.getDimensionPixelSize(R.dimen.app_margin),
                         0,
@@ -45,8 +49,24 @@ class CommunityPageAdapter : PagerAdapter() {
                         0
                     )
                 }
-                container.addView(recyclerView)
-                recyclerView
+                val smartRefreshLayout = SmartRefreshLayout(container.context).apply {
+                    addView(recyclerView)
+                    setOnRefreshListener {
+                        it.finishRefresh(1000)
+                    }
+                    setOnLoadMoreListener {
+
+                    }
+                }
+                container.addView(smartRefreshLayout)
+                smartRefreshLayout
+            }
+
+            else -> {
+                val binding = CommunityLuckyTicketPageItemBinding.inflate(LotteryApplication.layoutInflater, container, true)
+                binding.tabLayout.setupWithViewPager(binding.viewPager)
+                binding.viewPager.adapter = CommunityLuckyTicketPageAdapter()
+                binding.root
             }
         }
 
