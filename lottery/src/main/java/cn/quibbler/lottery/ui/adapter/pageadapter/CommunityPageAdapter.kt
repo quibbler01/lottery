@@ -36,11 +36,11 @@ class CommunityPageAdapter : PagerAdapter() {
                 val recyclerView = RecyclerView(container.context).apply {
                     layoutManager = LinearLayoutManager(LotteryApplication.application)
                     adapter = ConcatAdapter().apply {
-                        addAdapter(CommunityFunctionAdapter())
+                        /*addAdapter(CommunityFunctionAdapter())
                         addAdapter(HotTopicAdapter())
                         addAdapter(VotingTopicsAdapter())
                         addAdapter(PersonalDecorateAdapter())
-                        addAdapter(CommunityPostAdapter())
+                        addAdapter(CommunityPostAdapter())*/
                     }
                     setPadding(
                         container.context.resources.getDimensionPixelSize(R.dimen.app_margin),
