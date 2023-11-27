@@ -1,6 +1,6 @@
-package cn.quibbler.lottery.repository.network.retrofit
+package cn.quibbler.lottery.model.repository.network.retrofit
 
-import cn.quibbler.lottery.repository.Url
+import cn.quibbler.lottery.model.repository.Url
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
