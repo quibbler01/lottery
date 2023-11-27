@@ -1,7 +1,7 @@
 package cn.quibbler.lottery.model
 
-import cn.quibbler.lottery.repository.network.retrofit.NewsService
-import cn.quibbler.lottery.repository.network.retrofit.RetrofitHelper
+import cn.quibbler.lottery.model.repository.network.retrofit.NewsService
+import cn.quibbler.lottery.model.repository.network.retrofit.RetrofitHelper
 
 object NewsRepository {
 
